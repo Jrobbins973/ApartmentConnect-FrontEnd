@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import LoginPage from './components/LoginPage';
@@ -10,16 +10,23 @@ import TenantProfile from './components/TenantProfile';
 import LocalBusiness from './components/LocalBusiness';
 import Surveys from './components/Surveys';
 
+const baseUrl = 'http://localhost:3000/'
+
 function App() {
   const [currentTenant, setCurrentTenant] = useState(false)
   const [errors, setErrors] = useState(false)
+  const [forumPosts, setForumPosts] = useState([])
   
   const updateTenant = (tenant) => setCurrentTenant(tenant)
 
 
-console.log(currentTenant)
+    useEffect(() => {
+      fetch(baseUrl + 'forum_posts')
+      .then(res=>res.json())
+      .then(setForumPosts)
+    },[])
 
-
+// console.log(forumPosts)
 
   return (
     <div className="App">
@@ -34,7 +41,7 @@ console.log(currentTenant)
         </Route>
 
         <Route path = '/forum'>
-          <Forum />
+          <Forum forumPosts={forumPosts}/>
         </Route>
 
         <Route path = '/apartment_news'>
