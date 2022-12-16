@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 function LoginPage(props) {
 const {updateTenant, setErrors} = props
 
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const history = useHistory()
 
 function handleEmailChange(e){
 setEmail(e.target.value)
@@ -35,7 +37,10 @@ console.log(tenant)
         })
         .then (res => {
             if(res.ok){
-                res.json().then(tenant => updateTenant(tenant))
+                res.json().then(tenant => {
+                    updateTenant(tenant)
+                    history.push('/dashboard')
+                })
             } else {
                 res.json().then(json => setErrors(json.errors))
             }
