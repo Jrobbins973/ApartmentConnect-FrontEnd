@@ -3,6 +3,12 @@ import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
+import Forum from './components/Forum';
+import Events from './components/Events';
+import ApartmentNews from './components/ApartmentNews';
+import TenantProfile from './components/TenantProfile';
+import LocalBusiness from './components/LocalBusiness';
+import Surveys from './components/Surveys';
 
 function App() {
   const [currentTenant, setCurrentTenant] = useState(false)
@@ -24,7 +30,31 @@ console.log(currentTenant)
         </Route>
 
         <Route exact path = '/dashboard'>
-          <Dashboard currentTenant={currentTenant}/>
+          <Dashboard currentTenant={currentTenant} setErrors={setErrors}/>
+        </Route>
+
+        <Route path = '/forum'>
+          <Forum />
+        </Route>
+
+        <Route path = '/apartment_news'>
+          <ApartmentNews />
+        </Route>
+
+        <Route path = '/my_profile'>
+          <TenantProfile />
+        </Route>
+
+        <Route path = '/events'>
+          <Events />
+        </Route>
+
+        <Route path = '/local_businesses'>
+          <LocalBusiness />
+        </Route>
+
+        <Route path = '/surveys'>
+          <Surveys />
         </Route>
 
       </Switch>

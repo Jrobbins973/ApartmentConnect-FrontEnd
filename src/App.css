@@ -75,3 +75,63 @@
   .login-form input[type="submit"]:hover {
     background-color: rgb(25, 178, 229);
   }
+
+  /* LOGOUT BUTTON */
+
+  .logout-button {
+    background-color: #f44336; /* Set a background color */
+    color: white; /* Set the text color */
+    padding: 4px 4px; /* Add some padding */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Add a cursor on hover */
+    border-radius: 4px; /* Add rounded corners */
+  }
+  
+  /* Style the logout button when it is hovered over */
+  .logout-button:hover {
+    background-color: #ff3333; /* Change the background color on hover */
+  }
+  
+  /* Position the logout button in the top right corner */
+  .logout-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* HEADER */
+
+  .header {
+    background-color: #333; /* Set a dark background color */
+
+    text-align: center; /* Center the text */
+    color: white; /* Make the text white */
+  }
+  
+  /* Style the header text */
+  .header h1 {
+    font-size: 32px; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    margin: 0; /* Remove the margin */
+  }
+  
+  /* Style the header links */
+  .header a {
+    color: white; /* Make the links white */
+    text-decoration: none; /* Remove the underline */
+  }
+  
+  /* Style the header links when they are hovered over */
+  .header a:hover {
+    color: #f1f1f1; /* Change the link color on hover */
+  }
+
+  /* NAV BAR BUTTONS */
+  .nav-button {
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .nav-bar {
+    float:left;
+  }
