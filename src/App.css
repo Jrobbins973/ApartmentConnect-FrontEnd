@@ -135,3 +135,37 @@
   .nav-bar {
     float:left;
   }
+
+  /* FORUM STYLING */
+  .forum-post {
+    /* Add a border and some padding to the container */
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 60%;
+    position: relative;
+    left: 37%;
+    margin-bottom: 10px;
+  }
+    /* Add some style to the header */
+  .header {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+      /* Add an avatar image */
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    
+  
+    /* Add some style to the body */
+    .body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  

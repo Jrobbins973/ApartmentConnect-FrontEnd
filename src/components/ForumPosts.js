@@ -1,8 +1,22 @@
 import React from 'react'
 
-function ForumPosts() {
+const defaultAvatar = 'https://img.freepik.com/free-icon/user_318-804790.jpg?w=2000'
+
+function ForumPosts(props) {
+    const {post} = props
+    // console.log(post)
     return (
-    <div>ForumPosts</div>
+    <div>
+    <div className='forum-post'>
+        <div className="header">
+        <img className="avatar" src={defaultAvatar} alt="User avatar"/>
+    <div>Username</div>
+        </div>
+        <div className="body">
+            {post.text}
+        </div>
+</div>
+    </div>
     )
 }
 
