@@ -118,6 +118,7 @@ const toggleForm = () => {
             <h1>Welcome To ApartmentConnect</h1>
 
             {createNewAccount ? 
+            // CREATE NEW ACCOUNT
             <form onSubmit={handleCreateAccount} className='login-form'>
             <label>First Name:</label>
             <input
@@ -151,7 +152,10 @@ const toggleForm = () => {
             />
             <input  type="submit" value="Submit"/>
             </form>
+
             :
+            
+            // LOGIN FORM
             <form className='login-form' onSubmit={handleSubmit}>
             <label>Email:</label>
                 <input 
