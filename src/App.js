@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import LoginPage from './components/LoginPage';
 
 function App() {
+  const [currentTenant, setCurrentTenant] = useState(false)
+  const [errors, setErrors] = useState(false)
+  
+  const updateTenant = (tenant) => setCurrentTenant(tenant)
+
+
+console.log(currentTenant)
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginPage updateTenant={updateTenant} setErrors={setErrors}/>
     </div>
   );
 }

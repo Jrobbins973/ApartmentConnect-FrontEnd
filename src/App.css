@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* LOGIN FORM */
+  .login-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login-form form {
+    margin: 0;
+    padding: 0;
+  }
+
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .login-form input[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .login-form input[type="submit"]:hover {
+    background-color: rgb(25, 178, 229);
+  }
