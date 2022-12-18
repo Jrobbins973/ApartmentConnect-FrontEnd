@@ -8,6 +8,7 @@ import Events from './components/Events';
 import ApartmentNews from './components/ApartmentNews';
 import TenantProfile from './components/TenantProfile';
 import LocalBusiness from './components/LocalBusiness';
+import MaintenanceRequest from './components/MaintenanceRequest';
 import Surveys from './components/Surveys';
 
 const baseUrl = 'http://localhost:3000/'
@@ -62,6 +63,10 @@ function App() {
 
         <Route path = '/surveys'>
           <Surveys />
+        </Route>
+
+        <Route path = '/maintenance'>
+          <MaintenanceRequest currentTenant={currentTenant} />
         </Route>
 
       </Switch>

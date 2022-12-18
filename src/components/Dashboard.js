@@ -41,6 +41,7 @@ function Dashboard(props) {
             <h4 onClick={() => history.push('/events')} className='nav-button'>Events</h4>
             <h4 onClick={() => history.push('/surveys')} className='nav-button'>Surveys</h4>
             <h4 onClick={() => history.push('/local_businesses')} className='nav-button'>Local Businesses</h4>
+            <h4 onClick={() => history.push('/maintenance')} className='nav-button'>Maintenance Request</h4>
             <h4 onClick={() => history.push('/my_profile')} className='nav-button'>My Profile</h4>
         </div>
     )
