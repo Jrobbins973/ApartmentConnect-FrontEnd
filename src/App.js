@@ -42,7 +42,7 @@ function App() {
         </Route>
 
         <Route path = '/forum'>
-          <Forum forumPosts={forumPosts}/>
+          <Forum forumPosts={forumPosts} setForumPosts={setForumPosts}/>
         </Route>
 
         <Route path = '/apartment_news'>
