@@ -3,7 +3,7 @@ import { send } from 'emailjs-com';
 
 function MaintenanceRequest(props) {
     const {currentTenant} = props
-    // console.log(currentTenant)
+
 
 
 
@@ -44,7 +44,7 @@ function MaintenanceRequest(props) {
 
     return (
     <div>
-    <form onSubmit={onSubmit}>
+    <form className='login-form' onSubmit={onSubmit}>
     <input
         type='text'
         name='from_name'
@@ -55,7 +55,7 @@ function MaintenanceRequest(props) {
     <input
         type='text'
         name='to_name'
-        placeholder='Management..'
+        placeholder='Management'
         value={toSend.to_name}
         onChange={handleChange}
     />
@@ -73,7 +73,7 @@ function MaintenanceRequest(props) {
         value={toSend.reply_to}
         onChange={handleChange}
     />
-    <button type='submit'>Submit</button>
+    <input  type="submit" value="Submit"/>
 </form>
     </div>
     )

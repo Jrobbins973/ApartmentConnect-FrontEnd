@@ -29,12 +29,9 @@ function Dashboard(props) {
     return (
 
         <div>
-            <div className='header'>
+        <div className='header'>
                 <h1>Dashboard</h1>
                 <button className='logout-button' onClick={handleLogout}>Logout</button>
-
-        
-
         </div>
             <h4 onClick={() => history.push('/forum')} className='nav-button'>Forum</h4>
             <h4 onClick={() => history.push('/apartment_news')} className='nav-button'>News</h4>

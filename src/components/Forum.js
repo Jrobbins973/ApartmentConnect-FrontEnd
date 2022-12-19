@@ -2,11 +2,25 @@ import React from 'react'
 import ForumPosts from './ForumPosts'
 
 function Forum(props) {
-    const {forumPosts} = props
+    const {forumPosts, setForumPosts} = props
 
-    const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post}/>)
+
+
+  // DELETE POSTS
+    const deletePost = (postId) => {
+    // debugger
+    const updatedForumPostList = forumPosts.filter(originalForumPostList => originalForumPostList.id !== postId)
+    setForumPosts(updatedForumPostList)
+}
+
+
+    const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post} deletePost={deletePost} />)
     return (
-        <div>Forum
+        <div>
+            <div className='forum-header'>
+                <h1>Forum</h1>
+                
+        </div>
             {renderForumPosts}
         </div>
         
