@@ -20,6 +20,7 @@ function App() {
   
   const updateTenant = (tenant) => setCurrentTenant(tenant)
 
+ 
 
     useEffect(() => {
       fetch(baseUrl + 'forum_posts')
@@ -27,10 +28,13 @@ function App() {
       .then(setForumPosts)
     },[])
 
+
+
 // console.log(forumPosts)
 
   return (
     <div className="App">
+
       <Switch>
 
         <Route exact path='/'>
@@ -50,7 +54,7 @@ function App() {
         </Route>
 
         <Route path = '/my_profile'>
-          <TenantProfile />
+          <TenantProfile currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/events'>
