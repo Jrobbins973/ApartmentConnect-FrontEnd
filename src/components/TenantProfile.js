@@ -1,8 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import TenantDetails from './TenantDetails'
 
-function TenantProfile() {
+function TenantProfile(props) {
+    const {currentTenant} = props
+
+    const [tenant, setTenant] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/tenants/${currentTenant.id}`)
+        .then(res => res.json())
+        .then(setTenant)
+    },[])
+
+//  const renderTenantDetails = tenant.leases.map(lease => <TenantDetails lease={lease}/>)
+
     return (
-        <div>My Profile</div>
+        <div>
+            <h1>Hello, {tenant.first_name}</h1>
+        </div>
     )
 }
 

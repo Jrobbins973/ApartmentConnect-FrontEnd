@@ -27,6 +27,13 @@ function MaintenanceRequest(props) {
                 // setToSend("")
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
+                    alert("Request Sent")
+                    setToSend({
+                        from_name: '',
+                        to_name: '',
+                        message: '',
+                        reply_to: ''
+                    })
                 })
                 .catch((err) => {
                     console.log('FAILED...', err);
