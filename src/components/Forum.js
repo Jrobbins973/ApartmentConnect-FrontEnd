@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ForumPosts from './ForumPosts'
 import {useHistory} from 'react-router-dom'
 
 function Forum(props) {
-    const {forumPosts, setForumPosts, currentTenant, handleLogout} = props
+    const {forumPosts, 
+        setForumPosts, 
+        currentTenant, 
+        handleLogout,
+        } = props
 
     const history = useHistory()
+    const [postText, setPostText] = useState('')
+    const [category, setCategory] = useState('')
 
   // DELETE POSTS
     const deletePost = (postId) => {
@@ -13,6 +19,38 @@ function Forum(props) {
     const updatedForumPostList = forumPosts.filter(originalForumPostList => originalForumPostList.id !== postId)
     setForumPosts(updatedForumPostList)
 }
+    // DELETE POST END
+console.log(forumPosts)
+    
+    // FORUM POST SUBMIT logic
+const handleTextChange = e => {
+    setPostText(e.target.value)
+}
+
+const handleDropDownChange = e => {
+    setCategory(e.target.value)
+}
+
+function handleForumSubmission(e){
+    e.preventDefault()
+    const newForumPost = {
+        tenant_id: currentTenant.id,
+        full_tenant_name:`${currentTenant.first_name} ${currentTenant.last_name}`,
+        text: postText,
+        category: category
+    }
+        fetch('http://localhost:3000/forum_posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body:JSON.stringify(newForumPost)
+        })
+        .then(res => res.json())
+        .then(postData => setForumPosts([...forumPosts, postData]))
+    } 
+
 
 
     const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post} deletePost={deletePost} />)
@@ -41,7 +79,30 @@ function Forum(props) {
             </ul>
             </div>
         </div>
+            <div className='forum-submission-form-box'>
+            <form className='forum-submission-form' onSubmit={handleForumSubmission}>
+            <label>Your Message</label>
+                <input 
+                type="text" 
+                name="Email"
+                value={postText}
+                onChange={handleTextChange}
+                />
 
+
+                <label for="my-dropdown">Category:</label>
+                    <select id="my-dropdown" name="my-dropdown" onChange={handleDropDownChange}>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                        <option value="Buying / Selling">Buying / Selling</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Need Help">Need Help</option>
+
+                    </select>
+                <br></br>
+                <br></br>
+                <input type="submit" value="Post"/>
+            </form>
+            </div>
             <div className='forum-post-box'>
             {renderForumPosts}
             </div>

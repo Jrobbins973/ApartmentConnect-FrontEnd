@@ -4,20 +4,21 @@ import TenantDetails from './TenantDetails'
 function TenantProfile(props) {
     const {currentTenant} = props
 
-    const [tenant, setTenant] = useState({})
+    // const [tenant, setTenant] = useState({})
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/tenants/${currentTenant.id}`)
-        .then(res => res.json())
-        .then(setTenant)
-    },[])
+    // useEffect(() => {
+    //     fetch(`http://localhost:3000/tenants/${currentTenant.id}`)
+    //     .then(res => res.json())
+    //     .then(setTenant)
+    // },[])
 
-// const renderTenantDetails = tenant.leases.map(lease => <TenantDetails lease={lease}/>)
+    console.log(currentTenant.leases)
+const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease}/>)
 
     return (
         <div>
-            <h1>Hello, {tenant.first_name}</h1>
-            {/* {renderTenantDetails} */}
+            <h1>Hello, {currentTenant.first_name}</h1>
+            {renderTenantDetails}
         </div>
     )
 }
