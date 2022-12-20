@@ -146,7 +146,7 @@ const toggleForm = () => {
     return (
        
         <div>
-            <h1>Welcome To ApartmentConnect</h1>
+            <h1>Welcome To Edison Lofts</h1>
 
             {createNewAccount ? 
             // CREATE NEW ACCOUNT

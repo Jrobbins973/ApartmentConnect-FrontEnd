@@ -18,8 +18,8 @@ function Forum(props) {
     const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post} deletePost={deletePost} />)
     return (
         <div>
-            <div className="header">
-            
+        <div className="header">
+        <h1 className='header'>Forum</h1>
                 
         <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"/>
         <label for="openSidebarMenu" className="sidebarIconToggle">
@@ -41,7 +41,7 @@ function Forum(props) {
             </ul>
             </div>
         </div>
-            {/* <h1 className='header-text' >FORUM</h1> */}
+
             <div className='forum-post-box'>
             {renderForumPosts}
             </div>

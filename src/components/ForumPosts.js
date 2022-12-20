@@ -26,7 +26,7 @@ function ForumPosts(props) {
 
 
     return (
-    <div>
+    <div className='forum-post-container'>
     <div className='forum-post'>
         <div className="post-header">
         <img className="avatar" src={defaultAvatar} alt="User avatar"/>

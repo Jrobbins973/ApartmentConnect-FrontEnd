@@ -39,6 +39,7 @@ function Dashboard(props) {
         
 <div>
         <div className="header">
+            <h1>Dashboard</h1>
         <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"/>
         <label for="openSidebarMenu" className="sidebarIconToggle">
             <div className="spinner diagonal part-1"></div>
