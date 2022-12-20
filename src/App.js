@@ -17,11 +17,26 @@ function App() {
   const [currentTenant, setCurrentTenant] = useState(false)
   const [errors, setErrors] = useState(false)
   const [forumPosts, setForumPosts] = useState([])
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const toggleLoggedIn = () => {
+    setIsLoggedIn(true)
+  }
+  // const updateTenant = (r) => {
+  //   if(isLoggedIn) {
+  //     setCurrentTenant(r)
+  // } else
+  // console.log("error in APP")
   
-  const updateTenant = (tenant) => setCurrentTenant(tenant)
+    // useEffect(() => {
+    //     if(localStorage.email) {
+    //         setIsLoggedIn(true)
+    //     } else {
+    //         console.log("login issue")
+    //     }
+    // })
 
- 
-
+console.log(currentTenant)
     useEffect(() => {
       fetch(baseUrl + 'forum_posts')
       .then(res=>res.json())
@@ -38,11 +53,11 @@ function App() {
       <Switch>
 
         <Route exact path='/'>
-          <LoginPage updateTenant={updateTenant} setErrors={setErrors}/>
+          <LoginPage  setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentTenant={setCurrentTenant}/>
         </Route>
 
         <Route exact path = '/dashboard'>
-          <Dashboard currentTenant={currentTenant} setErrors={setErrors}/>
+          <Dashboard currentTenant={currentTenant} setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </Route>
 
         <Route path = '/forum'>

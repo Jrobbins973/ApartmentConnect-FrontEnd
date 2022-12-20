@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import Dashboard from './Dashboard'
 
 function LoginPage(props) {
-const {updateTenant, setErrors} = props
+const {updateTenant, setErrors, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
 
 // sign-in
 const [email, setEmail] = useState("")
@@ -24,31 +25,60 @@ function handleSubmit(e){
     email_address: email,
     password: password
 }
-// debugger
-console.log(tenant)
     setEmail("")
     setPassword("")
+    fetchLogin(tenant)
+        // fetch("http://localhost:3000/login", {
+        //     method:'POST',
+        //     headers:{
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json'
+        // },
+        //     body:JSON.stringify(tenant)
+        // })
+        // .then (res => {
+        //     if(res.ok){
+        //         res.json().then(tenant => {
+        //             if (localStorage===null){
+        //                 localStorage.email = tenant.email_address
+        //                 updateTenant
+        //             } else {
+        //                 history.push('/dashboard')
 
-        fetch("http://localhost:3000/login", {
-            method:'POST',
-            headers:{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-        },
-            body:JSON.stringify(tenant)
-        })
-        .then (res => {
-            if(res.ok){
-                res.json().then(tenant => {
-                    updateTenant(tenant)
-                    history.push('/dashboard')
-                })
-            } else {
-                res.json().then(json => setErrors(json.errors))
-            }
-        })
+        //             }
+        //         })
+        //     } else {
+        //         res.json().then(json => setErrors(json.errors))
+        //     }
+        // })
 }
 
+const fetchLogin = (tenant) => {
+    fetch("http://localhost:3000/login", {
+        method:'POST',
+        headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(tenant)
+    })
+    .then(res => res.json())
+    .then(r => {
+        if (r.email_address) {
+            localStorage.removeItem('error')
+            localStorage.email = r.email_address
+            setCurrentTenant(r)
+            setIsLoggedIn(true)
+        } else {
+            localStorage.error = "invalid email/password combination"
+        }
+        toggleLoggedIn()
+    })
+    
+}
+
+console.log(localStorage.email)
+// localStorage? console.log('true') : console.log('false')
 
 // CREATE NEW ACCOUNT
 const [firstName, setFirstName] = useState("")
@@ -114,6 +144,7 @@ const toggleForm = () => {
 
 
     return (
+       
         <div>
             <h1>Welcome To ApartmentConnect</h1>
 
@@ -177,11 +208,13 @@ const toggleForm = () => {
                 <input type="submit" value="Login"/>
                 <br></br>
                 <br></br>
-                <a onClick={toggleForm}>Don't have an account? Click here to register!</a>
+                <p onClick={toggleForm}>Don't have an account? Click here to register!</p>
             </form>
             
             
             }
+
+            {isLoggedIn ? history.push('/dashboard') : history.push('/')}
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 // import { Switch, Route, Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom'
 const logoutUrl = 'http://localhost:3000/logout'
 
 function Dashboard(props) {
-    const {setErrors} = props
+    const {setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn} = props
     const history = useHistory()
 
     // USER LOGOUT
@@ -17,6 +17,8 @@ function Dashboard(props) {
         }) 
         .then (res => {
             if(res.ok){
+                localStorage.clear()
+                setIsLoggedIn(false)
                 history.push('/')
             } else {
                 res.json()
@@ -26,11 +28,19 @@ function Dashboard(props) {
         
     }
 
+    // useEffect(() => {
+    //     if(localStorage.email) {
+    //         setIsLoggedIn(true)
+    //     } else {
+    //         console.log("login issue")
+    //     }
+    // })
+
     return (
 
         <div>
         <div className='header'>
-                <h1>Dashboard</h1>
+                <h1>Dashboard, Hi {currentTenant.first_name}</h1>
                 <button className='logout-button' onClick={handleLogout}>Logout</button>
         </div>
             <h4 onClick={() => history.push('/forum')} className='nav-button'>Forum</h4>
