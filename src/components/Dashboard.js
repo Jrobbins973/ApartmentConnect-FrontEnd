@@ -58,22 +58,15 @@ function Dashboard(props) {
                 <li onClick={handleLogout}><p>LOGOUT</p></li>
             </ul>
             </div>
-
 </div>
+                <div>
+                    <h1 className='annoucements'>Announcement: Elevator #4 will be down for maintenance today (12/20/22) </h1>
+
+                    <h3 className='business-shoutout-box'>Business Spotlight</h3>
+                </div>
 
 
-
-        <div>
-                {/* <h1>Dashboard, Hi {currentTenant.first_name}</h1> */}
-                {/* <button className='logout-button' onClick={handleLogout}>Logout</button> */}
-        </div>
-            {/* <h4 onClick={() => history.push('/forum')} className='nav-button'>Forum</h4>
-            <h4 onClick={() => history.push('/apartment_news')} className='nav-button'>News</h4>
-            <h4 onClick={() => history.push('/events')} className='nav-button'>Events</h4>
-            <h4 onClick={() => history.push('/surveys')} className='nav-button'>Surveys</h4>
-            <h4 onClick={() => history.push('/local_businesses')} className='nav-button'>Local Businesses</h4>
-            <h4 onClick={() => history.push('/maintenance')} className='nav-button'>Maintenance Request</h4>
-            <h4 onClick={() => history.push('/my_profile')} className='nav-button'>My Profile</h4> */}
+    
         </div>
     )
 }
