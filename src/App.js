@@ -10,14 +10,18 @@ import TenantProfile from './components/TenantProfile';
 import LocalBusiness from './components/LocalBusiness';
 import MaintenanceRequest from './components/MaintenanceRequest';
 import Surveys from './components/Surveys';
+import {useHistory} from 'react-router-dom'
 
 const baseUrl = 'http://localhost:3000/'
+const logoutUrl = 'http://localhost:3000/logout'
 
 function App() {
   const [currentTenant, setCurrentTenant] = useState(false)
   const [errors, setErrors] = useState(false)
   const [forumPosts, setForumPosts] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const history = useHistory()
+
 
   const toggleLoggedIn = () => {
     setIsLoggedIn(true)
@@ -35,6 +39,22 @@ function App() {
     //         console.log("login issue")
     //     }
     // })
+
+    const handleLogout = () => {
+      fetch(logoutUrl, {
+      method: 'DELETE'
+      }) 
+      .then (res => {
+          if(res.ok){
+              localStorage.clear()
+              setIsLoggedIn(false)
+              history.push('/')
+          } else {
+              res.json()
+              .then(json => setErrors(json.errors))
+          }
+      })
+  }
 
 console.log(currentTenant)
     useEffect(() => {
@@ -57,35 +77,35 @@ console.log(currentTenant)
         </Route>
 
         <Route exact path = '/dashboard'>
-          <Dashboard currentTenant={currentTenant} setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+          <Dashboard handleLogout={handleLogout} currentTenant={currentTenant} setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </Route>
 
         <Route path = '/forum'>
-          <Forum forumPosts={forumPosts} setForumPosts={setForumPosts}/>
+          <Forum handleLogout={handleLogout} currentTenant={currentTenant} forumPosts={forumPosts} setForumPosts={setForumPosts}/>
         </Route>
 
         <Route path = '/apartment_news'>
-          <ApartmentNews />
+          <ApartmentNews handleLogout={handleLogout} currentTenant={currentTenant} />
         </Route>
 
         <Route path = '/my_profile'>
-          <TenantProfile currentTenant={currentTenant}/>
+          <TenantProfile handleLogout={handleLogout} currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/events'>
-          <Events />
+          <Events handleLogout={handleLogout} currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/local_businesses'>
-          <LocalBusiness />
+          <LocalBusiness handleLogout={handleLogout} currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/surveys'>
-          <Surveys />
+          <Surveys handleLogout={handleLogout} currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/maintenance'>
-          <MaintenanceRequest currentTenant={currentTenant} />
+          <MaintenanceRequest handleLogout={handleLogout} currentTenant={currentTenant} />
         </Route>
 
       </Switch>

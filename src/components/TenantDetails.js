@@ -1,8 +1,12 @@
 import React from 'react'
 
-function TenantDetails() {
+function TenantDetails(props) {
+    const {lease} = props
     return (
-        <div>TenantDetails</div>
+        <div>
+            <h1>RENT: {lease.rent}</h1>
+        </div>
+        
     )
 }
 

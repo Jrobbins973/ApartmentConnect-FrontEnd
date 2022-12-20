@@ -4,7 +4,7 @@ import TenantDetails from './TenantDetails'
 function TenantProfile(props) {
     const {currentTenant} = props
 
-    const [tenant, setTenant] = useState([])
+    const [tenant, setTenant] = useState({})
 
     useEffect(() => {
         fetch(`http://localhost:3000/tenants/${currentTenant.id}`)
@@ -12,11 +12,12 @@ function TenantProfile(props) {
         .then(setTenant)
     },[])
 
-//  const renderTenantDetails = tenant.leases.map(lease => <TenantDetails lease={lease}/>)
+// const renderTenantDetails = tenant.leases.map(lease => <TenantDetails lease={lease}/>)
 
     return (
         <div>
             <h1>Hello, {tenant.first_name}</h1>
+            {/* {renderTenantDetails} */}
         </div>
     )
 }
