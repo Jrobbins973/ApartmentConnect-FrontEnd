@@ -63,6 +63,8 @@ console.log(currentTenant)
       .then(setForumPosts)
     },[])
 
+ 
+
 
 
 // console.log(forumPosts)
@@ -73,39 +75,66 @@ console.log(currentTenant)
       <Switch>
 
         <Route exact path='/'>
-          <LoginPage  setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentTenant={setCurrentTenant}/>
+          <LoginPage  
+          setErrors={setErrors} 
+          toggleLoggedIn={toggleLoggedIn} 
+          setIsLoggedIn={setIsLoggedIn} 
+          isLoggedIn={isLoggedIn} 
+          setCurrentTenant={setCurrentTenant}/>
         </Route>
 
         <Route exact path = '/dashboard'>
-          <Dashboard handleLogout={handleLogout} currentTenant={currentTenant} setErrors={setErrors} toggleLoggedIn={toggleLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+          <Dashboard 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant} 
+          setErrors={setErrors} 
+          toggleLoggedIn={toggleLoggedIn} 
+          setIsLoggedIn={setIsLoggedIn}/>
         </Route>
 
         <Route path = '/forum'>
-          <Forum handleLogout={handleLogout} currentTenant={currentTenant} forumPosts={forumPosts} setForumPosts={setForumPosts}/>
+          <Forum 
+
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant} 
+          forumPosts={forumPosts} 
+          setForumPosts={setForumPosts}/>
         </Route>
 
         <Route path = '/apartment_news'>
-          <ApartmentNews handleLogout={handleLogout} currentTenant={currentTenant} />
+          <ApartmentNews 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant} />
         </Route>
 
         <Route path = '/my_profile'>
-          <TenantProfile handleLogout={handleLogout} currentTenant={currentTenant}/>
+          <TenantProfile 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/events'>
-          <Events handleLogout={handleLogout} currentTenant={currentTenant}/>
+          <Events 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/local_businesses'>
-          <LocalBusiness handleLogout={handleLogout} currentTenant={currentTenant}/>
+          <LocalBusiness 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/surveys'>
-          <Surveys handleLogout={handleLogout} currentTenant={currentTenant}/>
+          <Surveys 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant}/>
         </Route>
 
         <Route path = '/maintenance'>
-          <MaintenanceRequest handleLogout={handleLogout} currentTenant={currentTenant} />
+          <MaintenanceRequest 
+          handleLogout={handleLogout} 
+          currentTenant={currentTenant} />
         </Route>
 
       </Switch>

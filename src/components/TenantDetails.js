@@ -5,6 +5,7 @@ function TenantDetails(props) {
     return (
         <div>
             <h1>RENT: {lease.rent}</h1>
+            <h2>Next Payment: {lease.rent_duedate}</h2>
         </div>
         
     )
