@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import './App.css';
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
@@ -20,6 +20,7 @@ function App() {
   const [errors, setErrors] = useState(false)
   const [forumPosts, setForumPosts] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [events, setEvents] = useState([])
   const history = useHistory()
 
 
@@ -40,6 +41,7 @@ function App() {
     //     }
     // })
 
+    // LOGOUT
     const handleLogout = () => {
       fetch(logoutUrl, {
       method: 'DELETE'
@@ -56,6 +58,7 @@ function App() {
       })
   }
 
+  // FETCH FORUM POSTS
 console.log(currentTenant)
     useEffect(() => {
       fetch(baseUrl + 'forum_posts')
@@ -63,11 +66,17 @@ console.log(currentTenant)
       .then(setForumPosts)
     },[])
 
- 
 
 
+// FETCH EVENTS / RESERVATIONS
 
-// console.log(forumPosts)
+useEffect(() => {
+  fetch(baseUrl + "reservations")
+  .then(res => res.json())
+  .then(setEvents)
+},[])
+
+
 
   return (
     <div className="App">
@@ -116,7 +125,9 @@ console.log(currentTenant)
         <Route path = '/events'>
           <Events 
           handleLogout={handleLogout} 
-          currentTenant={currentTenant}/>
+          currentTenant={currentTenant}
+          setEvents={setEvents}
+          events={events}/>
         </Route>
 
         <Route path = '/local_businesses'>
