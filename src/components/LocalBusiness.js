@@ -23,7 +23,7 @@ if(!isLoaded) {
     return <div>Loading...</div>
 }
 
- async function calculateRoute(e) {
+async function calculateRoute(e) {
     e.preventDefault()
     if(originRef.current.value === "" || destinationRef.current.value ==="" ) {
         return

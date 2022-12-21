@@ -283,6 +283,11 @@
   width: 100%;
   position: absolute;
 }
+.forum-post-background {
+  background-image: url("https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg");
+  opacity: 0.5;
+  position: absolute;
+}
 
 
 /* Side MENU */
@@ -529,3 +534,24 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background-color: white;
 }
 
+.event-homepage-background {
+  background-image: url("https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg");
+  position: relative;
+  background-color: black;
+  z-index: 9999;
+}
+
+
+.event-post {
+  /* Add a border and some padding to the container */
+  border: 1px solid #ccc;
+  padding: 30px;
+  width: 60%;
+  position: relative;
+  left: 37%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  background-color: white;
+  background-image: url("https://edisonlofts.com/images/EdisonLofts%2027.jpg");
+  background-size: cover;
+}

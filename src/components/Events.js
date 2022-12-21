@@ -49,6 +49,7 @@ const eventSubmission = (newEvent) => {
 const renderEvents = events.map(event => <EventList key={event.id} event={event}/>)
 
     return (
+        <div >
         <div>
             {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */}
         <div className="header">
@@ -71,12 +72,9 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
                 <li onClick={handleLogout}><p>LOGOUT</p></li>
             </ul>
             </div>
-        
-        
-        
-        
-        </div>
 
+        </div>
+        
         <div className='forum-post-box'>
         {renderEvents}
         </div>
@@ -122,6 +120,7 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
         
 
 
+        </div>
         </div>
     )
 }

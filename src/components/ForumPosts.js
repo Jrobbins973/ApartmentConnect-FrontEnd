@@ -5,7 +5,7 @@ import {AiFillDelete} from 'react-icons/ai'
 const defaultAvatar = 'https://img.freepik.com/free-icon/user_318-804790.jpg?w=2000'
 
 function ForumPosts(props) {
-    const {post, deletePost} = props
+    const {post, deletePost, currentTenant} = props
     // console.log(post)
     const [hover, setHover] = useState(false);
 
@@ -25,7 +25,7 @@ function ForumPosts(props) {
     }
 
 
-
+// console.log(post.tenant_id)
 
     return (
     <div className='forum-post-container'>
@@ -38,11 +38,13 @@ function ForumPosts(props) {
             {post.text} | {post.category}
         </div>
         
-        <button className='forum-delete-button'
+    {currentTenant.id === post.tenant_id ? <button className='forum-delete-button'
         onMouseEnter={onHover}
         onMouseLeave={onLeave}
         onClick={handleDelete}>
-            { hover ? "Delete" : <AiFillDelete/>}</button>
+            <AiFillDelete/>
+            </button> : null}
+        
 
 </div>
     </div>

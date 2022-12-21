@@ -20,7 +20,7 @@ function Forum(props) {
     setForumPosts(updatedForumPostList)
 }
     // DELETE POST END
-console.log(forumPosts)
+// console.log(forumPosts)
     
     // FORUM POST SUBMIT logic
 const handleTextChange = e => {
@@ -39,6 +39,8 @@ function handleForumSubmission(e){
         text: postText,
         category: category
     }
+    setPostText("")
+    
         fetch('http://localhost:3000/forum_posts', {
             method: 'POST',
             headers: {
@@ -53,7 +55,7 @@ function handleForumSubmission(e){
 
 
 
-    const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post} deletePost={deletePost} />)
+    const renderForumPosts = forumPosts.map(post => <ForumPosts key={post.id} post={post} deletePost={deletePost} currentTenant={currentTenant} />)
     return (
         <div>
         <div className="header">
