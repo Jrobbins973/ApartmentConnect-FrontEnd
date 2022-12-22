@@ -31,6 +31,7 @@ const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key
         <div id="sidebarMenu">
             <ul className="sidebarMenuInner">
                 <li onClick={() => history.push('/my_profile')}>{currentTenant.first_name} {currentTenant.last_name} <span>Renter</span></li>
+                <li onClick={() => history.push('/dashboard')}><p>HOME</p></li>
                 <li onClick={() => history.push('/forum')}><p>FORUM</p></li>
                 <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li>
                 <li onClick={() => history.push('/events')}><p>EVENTS</p></li>

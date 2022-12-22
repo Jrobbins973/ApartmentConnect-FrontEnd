@@ -145,7 +145,7 @@ const toggleForm = () => {
 
     return (
        
-        <div>
+        <div className='login-page'>
             <h1>Welcome To Edison Lofts</h1>
 
             {createNewAccount ? 

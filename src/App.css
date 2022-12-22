@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image: url('http://www.minnowasko.com/mw/wp-content/gallery/edison-lofts/3-main-st-20141009.jpg');
+  /* background-image: url('http://www.minnowasko.com/mw/wp-content/gallery/edison-lofts/3-main-st-20141009.jpg'); */
+  background-color:white;
   position: absolute;
   top: 0;
   left: 0;
@@ -9,6 +10,10 @@
   background-size: cover;
 }
 
+.login-page {
+  background-image: url('http://www.minnowasko.com/mw/wp-content/gallery/edison-lofts/3-main-st-20141009.jpg');
+  height: 100%;
+}
 
 
 .App-logo {
@@ -298,9 +303,10 @@
   width: 100%;
   max-width: 100%;
   box-shadow: none;
-  background: linear-gradient(90deg, #0be2bb 0%, #3F5EFB 100%);
+  /* background: linear-gradient(90deg, #0be2bb 0%, #3F5EFB 100%); */
+  background-color: rgba(67, 67, 98, 0.442);
   position: fixed;
-  height: 60px!important;
+  height: 40px!important;
   overflow: hidden;
   z-index: 10;
   box-shadow: 0px 5px 5px black; 
@@ -334,10 +340,11 @@
   position: fixed;
   left: 0;
   width: 250px;
-  margin-top: 60px;
+  margin-top: 40px;
   transform: translateX(-250px);
   transition: transform 250ms ease-in-out;
-  background: linear-gradient(180deg, #0be2bb 0%, #3F5EFB 100%);
+  /* background: linear-gradient(180deg, #0be2bb 0%, #3F5EFB 100%); */
+  background-color: rgb(67, 67, 98);
 
 }
 .sidebarMenuInner{
@@ -352,8 +359,13 @@
   font-weight: bold;
   padding: 20px;
   cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.372);
+  transition: box-shadow 0.2s;
 }
+.sidebarMenuInner li:hover {
+  box-shadow: inset 0px 5px 5px #ccc;
+}
+
 .sidebarMenuInner li span{
   display: block;
   font-size: 14px;
@@ -383,7 +395,7 @@ input[type=checkbox] {
   z-index: 99;
   height: 100%;
   width: 100%;
-  top: 22px;
+  top: 12px;
   left: 15px;
   height: 22px;
   width: 22px;
@@ -511,14 +523,17 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 .business-shoutout-box {
-  position: relative;
-  width: 200px;
-  height: 200px;
+  position: absolute;
+  width: 550px;
+  height: 450px;
   border-radius: 15px;
   top: 200px;
-  left: 60%;
+  left: 55%;
   background-color: white;
   border: #282c34;
+  margin: auto;
+  border: 1px solid black;
+  box-shadow: 0 5px 5px rgb(0, 0, 0)
 }
 
 
@@ -554,4 +569,87 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background-color: white;
   background-image: url("https://edisonlofts.com/images/EdisonLofts%2027.jpg");
   background-size: cover;
+}
+
+
+.upcoming-events-box {
+  position: absolute;
+  width: 550px;
+  height: 450px;
+  border-radius: 15px;
+  top: 200px;
+  left: 5%;
+  background-color: white;
+  border: #282c34;
+  margin: auto;
+  border: 1px solid black;
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  background-image: url('https://img.freepik.com/premium-vector/confetti-vector-illustration-festival-background-simple-tinsel-confetti-explosion-red-green-golden-blue-confetti-white-background-event-party-celebration_585735-307.jpg?w=2000');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.upcoming-events-box h1 {
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  border-radius: 15px;
+  transition: all 0.75s;
+}
+
+.upcoming-events-box h1:hover {
+  background-color: #ccc;
+}
+
+
+
+.upcoming-events-posts {
+    /* Add a border and some padding to the container */
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    position: relative;
+    left: 0%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+  }
+.upcoming-events-posts h2 {
+  position: relative;
+  top: -31px;
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  border-radius: 15px;
+}
+
+.upcoming-events-posts h3 {
+  margin-top: 0px;
+  position: relative;
+  top: -40px;
+  border-bottom: 1px solid black;
+}
+
+.upcoming-events-posts p {
+  position: relative;
+  margin: auto;
+  top: -30px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  position: relative;
+  top: 75px;
+}
+
+.alert.success {
+  background-color: #4CAF50; /* Green */
+}
+
+.alert.info {
+  background-color: #2196F3; /* Blue */
+}
+
+.alert.warning {
+  background-color: #ff9800; /* Orange */
 }

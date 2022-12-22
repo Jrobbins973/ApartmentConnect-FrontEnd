@@ -21,6 +21,7 @@ function App() {
   const [forumPosts, setForumPosts] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [events, setEvents] = useState([])
+  const [recentEvents, setRecentEvents] = useState([])
   const history = useHistory()
 
 
@@ -76,7 +77,13 @@ useEffect(() => {
   .then(setEvents)
 },[])
 
+// FETCH RECENT 2 RESERVATIONS / EVENTS
 
+useEffect(() => {
+  fetch(baseUrl + "recentreservations")
+  .then(res => res.json())
+  .then(setRecentEvents)
+},[])
 
   return (
     <div className="App">
@@ -94,6 +101,7 @@ useEffect(() => {
 
         <Route exact path = '/dashboard'>
           <Dashboard 
+          recentEvents={recentEvents}
           handleLogout={handleLogout} 
           currentTenant={currentTenant} 
           setErrors={setErrors} 

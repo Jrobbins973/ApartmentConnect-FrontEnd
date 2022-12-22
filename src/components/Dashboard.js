@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import DashboardEvents from './DashboardEvents'
+
 // import { Switch, Route, Link } from "react-router-dom";
 
 // import { Header, Image } from 'semantic-ui-react'
@@ -7,7 +9,13 @@ import {useHistory} from 'react-router-dom'
 const logoutUrl = 'http://localhost:3000/logout'
 
 function Dashboard(props) {
-    const {setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn, handleLogout} = props
+    const {setErrors,
+        currentTenant,
+        toggleLoggedIn,
+        setIsLoggedIn,
+        handleLogout,
+        recentEvents
+        } = props
     const history = useHistory()
 
     // USER LOGOUT
@@ -34,7 +42,7 @@ function Dashboard(props) {
     //         console.log("login issue")
     //     }
     // })
-
+const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         
 <div>
@@ -60,7 +68,14 @@ function Dashboard(props) {
             </div>
 </div>
                 <div>
-                    <h1 className='annoucements'>Announcement: Elevator #4 will be down for maintenance today (12/20/22) </h1>
+                    <h1 className='alert info'>Announcement: Elevator #4 will be down for maintenance today (12/23/22) </h1>
+                    
+                    <div className='upcoming-events-box'>
+                        <h1 onClick={() => history.push('/events')}>Upcoming Events</h1>
+                        <div>
+                        {renderRecentEvents}
+                        </div>
+                    </div>
 
                     <h3 className='business-shoutout-box'>Business Spotlight</h3>
                 </div>
