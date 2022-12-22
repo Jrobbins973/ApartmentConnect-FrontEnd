@@ -101,6 +101,8 @@ useEffect(() => {
 
         <Route exact path = '/dashboard'>
           <Dashboard 
+          events = {events}
+          setEvents={setEvents}
           recentEvents={recentEvents}
           handleLogout={handleLogout} 
           currentTenant={currentTenant} 

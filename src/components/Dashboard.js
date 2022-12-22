@@ -11,8 +11,8 @@ const logoutUrl = 'http://localhost:3000/logout'
 function Dashboard(props) {
     const {setErrors,
         currentTenant,
-        toggleLoggedIn,
-        setIsLoggedIn,
+        events,
+        setEvents,
         handleLogout,
         recentEvents
         } = props
@@ -42,6 +42,12 @@ function Dashboard(props) {
     //         console.log("login issue")
     //     }
     // })
+
+
+
+    
+
+
 const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         

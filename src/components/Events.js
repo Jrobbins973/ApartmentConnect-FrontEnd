@@ -16,6 +16,15 @@ function Events(props) {
     const [eventLocation, setEventLocation] = useState("")
 
 
+    const handleDeleteEvent = eventId => {
+
+        const updatedEventList = events.filter(originalEventList => originalEventList.id !== eventId)
+        setEvents(updatedEventList)
+        // const updatedForumPostList = forumPosts.filter(originalForumPostList => originalForumPostList.id !== postId)
+        // setForumPosts(updatedForumPostList)
+    }
+
+
     // form logic
 
     const handleEventSubmit = (e) => {
@@ -46,7 +55,7 @@ const eventSubmission = (newEvent) => {
     .then(newEventData => setEvents([...events, newEventData]))
 } 
 
-const renderEvents = events.map(event => <EventList key={event.id} event={event}/>)
+const renderEvents = events.map(event => <EventList key={event.id} event={event} handleDeleteEvent={handleDeleteEvent}/>)
 
     return (
         <div >
