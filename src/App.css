@@ -216,6 +216,16 @@
   /* left: 195px; */
 }
 
+.dashboard-google-maps {
+  border: 2px solid black;
+  position: relative;
+  height: 330px;
+  width: 490px;
+  top: -15px;
+  margin: auto;
+  /* left: 195px; */
+}
+
 /* .map-form {
   position: absolute;
   display: flex;
@@ -536,6 +546,11 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   box-shadow: 0 5px 5px rgb(0, 0, 0)
 }
 
+.business-shoutout-box h1 {
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  border-radius: 15px;
+  transition: all 0.75s;
+}
 
 .tenant-details {
   z-index: 5;
@@ -618,6 +633,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   top: -31px;
   box-shadow: 0 5px 5px rgb(0, 0, 0);
   border-radius: 15px;
+  font-size: 18px;
 }
 
 .upcoming-events-posts h3 {
@@ -625,6 +641,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   position: relative;
   top: -40px;
   border-bottom: 1px solid black;
+  font-size: 15px;
 }
 
 .upcoming-events-posts p {
