@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import DashboardEvents from './DashboardEvents'
-
+import {useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer} from "@react-google-maps/api"
 // import { Switch, Route, Link } from "react-router-dom";
 
 // import { Header, Image } from 'semantic-ui-react'
@@ -18,36 +18,22 @@ function Dashboard(props) {
         } = props
     const history = useHistory()
 
-    // USER LOGOUT
-    // const handleLogout = () => {
-    //     fetch(logoutUrl, {
-    //     method: 'DELETE'
-    //     }) 
-    //     .then (res => {
-    //         if(res.ok){
-    //             localStorage.clear()
-    //             setIsLoggedIn(false)
-    //             history.push('/')
-    //         } else {
-    //             res.json()
-    //             .then(json => setErrors(json.errors))
-    //         }
-    //     })
-    // }
+    // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
+    const [map, setMap] = useState(/** @type google.maps.Map */ (null))
+    const center = {lat: 40.7832, lng: -74.2255}
 
-    // useEffect(() => {
-    //     if(localStorage.email) {
-    //         setIsLoggedIn(true)
-    //     } else {
-    //         console.log("login issue")
-    //     }
-    // })
+    const {isLoaded} = useJsApiLoader({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        libraries: ['places']
+    })
 
+    if(!isLoaded) {
+        return <div>Loading...</div>
+    }
 
+  
 
-    
-
-
+  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
 const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         
@@ -83,7 +69,30 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                         </div>
                     </div>
 
-                    <h3 className='business-shoutout-box'>Business Spotlight</h3>
+                    <div className='business-shoutout-box'>
+                        <h1>Business Spotlight</h1>
+                        <h5>Star Tavern - Voted Best Pizza in NJ!</h5>
+                        <p>400 High St, City of Orange, NJ 07050</p>
+                        <div className='dashboard-google-maps'>
+                        <GoogleMap center={center} 
+                        zoom={15} 
+                        mapContainerStyle={{width: '100%', height: '100%'}}
+                        onLoad={(map) => setMap(map)}
+                        options={{
+                            zoomControl: false,
+                            streetViewControl:false,
+                            mapTypeControl: false,
+                            fullscreenControl: false
+
+                        }}
+                        >
+                            <Marker position={center}/>
+
+                            
+                            
+                        </GoogleMap>
+        </div>
+                        </div>
                 </div>
 
 
