@@ -16,7 +16,7 @@ const deleteEvent = () => {
         
         <div className='forum-post-container'>
 
-        <div className='forum-post'>
+        <div className='event-post'>
             <h3>{event.title}</h3>
             <p>{event.description}</p>
             <p>{event.date_reserved}</p>

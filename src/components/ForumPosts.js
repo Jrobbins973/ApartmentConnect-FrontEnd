@@ -25,7 +25,9 @@ function ForumPosts(props) {
     }
 
 
-// console.log(post.tenant_id)
+    // changes color based on category
+    let postCategory = post.category
+    let style = {backgroundColor: (postCategory === "Miscellaneous") ? "#FF856B" : (postCategory === "Pets") ? "#6BEBFF" : (postCategory === "Buying / Selling") ? "#836BFF" : "#6BFF88"}
 
     return (
     <div className='forum-post-container'>
@@ -34,9 +36,10 @@ function ForumPosts(props) {
         <img className="avatar" src={defaultAvatar} alt="User avatar"/>
     <div>{post.full_tenant_name}</div>
         </div>
-        <div className="body">
-            {post.text} | {post.category}
+        <div className="forum-post-body">
+            {post.text}
         </div>
+        <p style={style}>{post.category}</p>
         
     {currentTenant.id === post.tenant_id ? <button className='forum-delete-button'
         onMouseEnter={onHover}
