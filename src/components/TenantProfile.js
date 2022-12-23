@@ -13,8 +13,8 @@ function TenantProfile(props) {
     //     .then(setTenant)
     // },[])
 
-    console.log(currentTenant.leases)
-const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease}/>)
+
+const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>)
 
     return (
         <div>

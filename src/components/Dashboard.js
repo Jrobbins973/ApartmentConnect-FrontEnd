@@ -70,7 +70,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                     </div>
 
                     <div className='business-shoutout-box'>
-                        <h1>Business Spotlight</h1>
+                        <h1 onClick={() => history.push('/local_businesses')}>Business Spotlight</h1>
                         <h5>Star Tavern - Voted Best Pizza in NJ!</h5>
                         <p>400 High St, City of Orange, NJ 07050</p>
                         <div className='dashboard-google-maps'>

@@ -73,13 +73,16 @@ const center = {lat: 40.7828, lng: -74.2374}
                     <input type='text' placeholder="Destination" ref={destinationRef}/>
                 </Autocomplete>
 
-                
-                <button onClick={calculateRoute}>Calculate Route</button>
-                <button onClick={clearRoute}>Clear Route</button>
+                <br></br>
+                <button className='calculate-route-button' onClick={calculateRoute}>Calculate Route</button>
+                <br></br>
+            
+                <br></br>
+                <button className='calculate-route-button' onClick={clearRoute}>Clear Route</button>
                 <br></br>
                 <br></br>
-                <text>Distance:{distance}</text>
-                <text>Duration:{duration}</text>
+                <p>Distance: {distance}</p>
+                <p>Duration: {duration}</p>
 
             <button className='map-center-button' onClick={() => map.panTo(center) }><FaLocationArrow /></button>
             

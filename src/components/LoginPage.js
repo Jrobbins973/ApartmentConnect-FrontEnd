@@ -146,7 +146,7 @@ const toggleForm = () => {
     return (
        
         <div className='login-page'>
-            <h1>Welcome To Edison Lofts</h1>
+            <h1 style={{color: "white"}}>Welcome To Edison Lofts</h1>
 
             {createNewAccount ? 
             // CREATE NEW ACCOUNT
