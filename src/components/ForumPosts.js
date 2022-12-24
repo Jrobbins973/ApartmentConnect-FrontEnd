@@ -27,7 +27,14 @@ function ForumPosts(props) {
 
     // changes color based on category
     let postCategory = post.category
-    let style = {backgroundColor: (postCategory === "Miscellaneous") ? "#FF856B" : (postCategory === "Pets") ? "#6BEBFF" : (postCategory === "Buying / Selling") ? "#836BFF" : "#6BFF88"}
+    let style = {backgroundColor: 
+        (postCategory === "Miscellaneous") ? "#FF856B" 
+        : 
+        (postCategory === "Pets") ? "#6BEBFF" 
+        : 
+        (postCategory === "Buying / Selling") ? "#836BFF" 
+        : 
+        "#6BFF88"}
 
     return (
     <div className='forum-post-container'>
