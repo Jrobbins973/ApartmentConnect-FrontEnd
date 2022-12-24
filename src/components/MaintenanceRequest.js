@@ -28,7 +28,7 @@ function MaintenanceRequest(props) {
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
                     alert("Request Sent")
-                    setToSend({
+                    setToSend({git
                         from_name: '',
                         to_name: '',
                         message: '',
