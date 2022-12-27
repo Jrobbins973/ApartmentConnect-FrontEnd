@@ -19,7 +19,7 @@ function Dashboard(props) {
         } = props
     const history = useHistory()
 
-
+// fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
         useEffect(() => {
             fetch(`http://localhost:3000/tenants/${localStorage.uid}`)
             .then(res => res.json())
