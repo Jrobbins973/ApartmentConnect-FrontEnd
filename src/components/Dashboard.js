@@ -14,9 +14,17 @@ function Dashboard(props) {
         events,
         setEvents,
         handleLogout,
-        recentEvents
+        recentEvents,
+        setCurrentTenant
         } = props
     const history = useHistory()
+
+
+        useEffect(() => {
+            fetch(`http://localhost:3000/tenants/${localStorage.uid}`)
+            .then(res => res.json())
+            .then(setCurrentTenant)
+        },[])
 
     // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
     const [map, setMap] = useState(/** @type google.maps.Map */ (null))
@@ -30,11 +38,10 @@ function Dashboard(props) {
     if(!isLoaded) {
         return <div>Loading...</div>
     }
-
-  
-
   // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
-const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
+
+
+  const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         
 <div>
