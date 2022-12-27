@@ -60,7 +60,7 @@ function App() {
   }
 
   // FETCH FORUM POSTS
-console.log(currentTenant)
+// console.log(currentTenant)
     useEffect(() => {
       fetch(baseUrl + 'forum_posts')
       .then(res=>res.json())
@@ -96,7 +96,8 @@ useEffect(() => {
           toggleLoggedIn={toggleLoggedIn} 
           setIsLoggedIn={setIsLoggedIn} 
           isLoggedIn={isLoggedIn} 
-          setCurrentTenant={setCurrentTenant}/>
+          setCurrentTenant={setCurrentTenant}
+          currentTenant={currentTenant}/>
         </Route>
 
         <Route exact path = '/dashboard'>
@@ -108,7 +109,8 @@ useEffect(() => {
           currentTenant={currentTenant} 
           setErrors={setErrors} 
           toggleLoggedIn={toggleLoggedIn} 
-          setIsLoggedIn={setIsLoggedIn}/>
+          setIsLoggedIn={setIsLoggedIn}
+          setCurrentTenant={setCurrentTenant}/>
         </Route>
 
         <Route path = '/forum'>

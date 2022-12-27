@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 import Dashboard from './Dashboard'
 
 function LoginPage(props) {
-const {updateTenant, setErrors, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
+const {updateTenant, setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
 
 // sign-in
 const [email, setEmail] = useState("")
@@ -53,6 +53,21 @@ function handleSubmit(e){
         // })
 }
 
+// const fetchLogin = (tenant) => {
+//         fetch("http://localhost:3000/login", {
+//             method:'POST',
+//             headers:{
+//                 'Content-Type': 'application/json',
+//                 'auth-token': localStorage.uid
+//             },
+//             body: JSON.stringify(tenant)
+//         })
+//         .then(res => res.json())
+//         .then(tenant => localStorage.uid = tenant.uid, setCurrentTenant(tenant), setIsLoggedIn(true))
+        
+// }
+
+// console.log(currentTenant)
 const fetchLogin = (tenant) => {
     fetch("http://localhost:3000/login", {
         method:'POST',
@@ -67,6 +82,7 @@ const fetchLogin = (tenant) => {
         if (r.email_address) {
             localStorage.removeItem('error')
             localStorage.email = r.email_address
+            localStorage.uid = r.id
             setCurrentTenant(r)
             setIsLoggedIn(true)
         } else {
@@ -77,8 +93,6 @@ const fetchLogin = (tenant) => {
     
 }
 
-console.log(localStorage.email)
-// localStorage? console.log('true') : console.log('false')
 
 // CREATE NEW ACCOUNT
 const [firstName, setFirstName] = useState("")
@@ -214,7 +228,7 @@ const toggleForm = () => {
             
             }
 
-            {isLoggedIn ? history.push('/dashboard') : history.push('/')}
+            {isLoggedIn ? history.push('/dashboard') : null}
         </div>
     )
 }
