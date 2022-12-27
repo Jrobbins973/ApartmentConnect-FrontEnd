@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import Dashboard from './Dashboard'
+import CreateAccountModal from './CreateAccountModal'
 
 function LoginPage(props) {
 const {updateTenant, setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
@@ -10,6 +11,7 @@ const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [createNewAccount, setCreateNewAccount] = useState(false)
 const history = useHistory()
+const [showModal, setShowModal] = useState(false)
 
 function handleEmailChange(e){
 setEmail(e.target.value)
@@ -222,11 +224,12 @@ const toggleForm = () => {
                 <input type="submit" value="Login"/>
                 <br></br>
                 <br></br>
-                <p onClick={toggleForm}>Don't have an account? Click here to register!</p>
+                <p onClick={() => setShowModal(true)}>Don't have an account? Click here to register!</p>
             </form>
-            
-            
             }
+            {/* <button onClick={() => setShowModal(true)}>Show Modal</button> */}
+
+            {showModal ? <CreateAccountModal setShowModal = {setShowModal}/> : null}
 
             {isLoggedIn ? history.push('/dashboard') : null}
         </div>
