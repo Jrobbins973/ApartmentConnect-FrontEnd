@@ -56,6 +56,7 @@ const handleCreateAccount = e => {
         if(res.ok){
             res.json().then(newTenant => console.log(newTenant))
             alert("Account Created Successfully")
+            setShowModal(false)
         } else {
             res.json().then(json => alert(json.errors))
         }

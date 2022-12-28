@@ -97,7 +97,8 @@ useEffect(() => {
           setIsLoggedIn={setIsLoggedIn} 
           isLoggedIn={isLoggedIn} 
           setCurrentTenant={setCurrentTenant}
-          currentTenant={currentTenant}/>
+          currentTenant={currentTenant}
+          errors={errors}/>
         </Route>
 
         <Route exact path = '/dashboard'>
