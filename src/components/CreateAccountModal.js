@@ -66,10 +66,9 @@ return (
     <div className='modal'  onClick={() => setShowModal(false)}>
         <div className='modal-content' onClick={e => e.stopPropagation()}>
             <div className='modal-header'>
-                <h4 className='modal-title'>Account Registration</h4>
             </div>
             <div className='modal-body'>
-            <form onSubmit={handleCreateAccount} className='login-form'>
+            {/* <form onSubmit={handleCreateAccount} className='login-form'>
             <label>First Name:</label>
             <input
             type='text'
@@ -101,10 +100,97 @@ return (
             onChange={handleNewPasswordChange}
             />
             <input  type="submit" value="Submit"/>
+            </form> */}
+            <div className="form">
+                <form onSubmit={handleCreateAccount}>
+            <div className="title">Create Account</div>
+            <div className="subtitle">  </div>
+            
+            {/* FIRST NAME INPUT */}
+            <div className="input-container ic1">
+                    <input 
+                    id="firstname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" "
+                    value={firstName}
+                    onChange={handleFirstNameChange}
+                    />
+
+            <div className="cut"></div>
+            <label for="firstname" className="placeholder">First Name</label>
+            </div>
+
+            {/* LAST NAME INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                    value={lastName}
+                    onChange={handleLastNameChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Last Name</label>
+            </div>
+                
+            {/* PHONE NUMBER INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                    value={phoneNumber}
+                    onChange={handlePhoneNumberChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Phone Number</label>
+            </div>
+
+            {/* EMAIL INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                    value={newEmailAddress}
+                    onChange={handleNewEmailChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Email Address</label>
+            </div>
+
+            {/* PASSWORD INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                    value={newPassword}
+                    onChange={handleNewPasswordChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Password</label>
+            </div>
+
+
+            <br></br>
+            <button type="submit" className="login-page-button">Login</button>
+            <br></br>
+            <br></br>
             </form>
             </div>
+            </div>
             <div className='modal-footer'>
-                <button onClick={() => setShowModal(false)}>Close</button>
+        
             </div>
         </div>
     </div>
