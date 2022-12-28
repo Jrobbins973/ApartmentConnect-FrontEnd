@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import Dashboard from './Dashboard'
 import CreateAccountModal from './CreateAccountModal'
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function LoginPage(props) {
 const {updateTenant, setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
@@ -63,113 +64,13 @@ const fetchLogin = (tenant) => {
 }
 
 
-// CREATE NEW ACCOUNT
-const [firstName, setFirstName] = useState("")
-const [lastName, setLastName] = useState("")
-const [phoneNumber, setPhoneNumber] = useState("")
-const [newEmailAddress, setNewEmailAddress] = useState("")
-const [newPassword, setNewPassword] = useState("")
-
-
-function handleFirstNameChange(e){
-    setFirstName(e.target.value)
-    }
-
-function handleLastNameChange(e){
-    setLastName(e.target.value)
-    }
-
-function handlePhoneNumberChange(e){
-    setPhoneNumber(e.target.value)
-    }
-
-function handleNewEmailChange(e){
-    setNewEmailAddress(e.target.value)
-    }
-
-function handleNewPasswordChange(e){
-    setNewPassword(e.target.value)
-    }
-
-const handleCreateAccount = e => {
-    e.preventDefault()
-    const newTenant = {
-        first_name: firstName,
-        last_name: lastName,
-        phone_number: phoneNumber,
-        email_address: newEmailAddress,
-        password: newPassword
-    }
-    console.log(newTenant)
-
-    fetch("http://localhost:3000/tenants", {
-        method:'POST',
-        headers:{
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-        },
-        body:JSON.stringify(newTenant)
-    })
-    .then( res => {
-        if(res.ok){
-            res.json().then(newTenant => console.log(newTenant))
-            toggleForm()
-        } else {
-            res.json().then(json => setErrors(json.errors))
-        }
-    })
-}
-
-    // Switches between create account form and login form 
-const toggleForm = () => {
-    setCreateNewAccount(!createNewAccount)
-}
-
 
     return (
 
         <div className='login-page'>
-            <h1 style={{color: "white"}}>Welcome To Edison Lofts</h1>
+            {/* <h1 style={{color: "white"}}>Welcome To Edison Lofts</h1> */}
 
-            {createNewAccount ? 
-            // CREATE NEW ACCOUNT
-            <form onSubmit={handleCreateAccount} className='login-form'>
-            <label>First Name:</label>
-            <input
-            type='text'
-            value={firstName}
-            onChange={handleFirstNameChange}
-            />
-            <label>Last Name:</label>
-            <input
-            type='text'
-            value={lastName}
-            onChange={handleLastNameChange}
-            />
-            <label>Phone Number:</label>
-            <input
-            type='text'
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-            />
-            <label>Email Address:</label>
-            <input
-            type='text'
-            value={newEmailAddress}
-            onChange={handleNewEmailChange}
-            />
-            <label>Password:</label>
-            <input
-            type='text'
-            value={newPassword}
-            onChange={handleNewPasswordChange}
-            />
-            <input  type="submit" value="Submit"/>
-            </form>
-
-            :
-            
-            // LOGIN FORM
+            {/* // LOGIN FORM
             <form className='login-form' onSubmit={handleSubmit}>
             <label>Email:</label>
                 <input 
@@ -192,14 +93,59 @@ const toggleForm = () => {
                 <br></br>
                 <br></br>
                 <p onClick={() => setShowModal(true)}>Don't have an account? Click here to register!</p>
-            </form>
-            }
-            {/* <button onClick={() => setShowModal(true)}>Show Modal</button> */}
-
+            </form> */}
             {showModal ? <CreateAccountModal setShowModal = {setShowModal}/> : null}
-
             {isLoggedIn ? history.push('/dashboard') : null}
-        </div>
+
+        <div className="form">
+                <form onSubmit={handleSubmit}>
+            <div className="title">Edison Lofts</div>
+            <div className="subtitle">Powered by ApartmentConnect</div>
+            
+            
+            <div className="input-container ic1">
+                    <input 
+                    id="firstname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" "
+                    value={email}
+                    onChange={handleEmailChange} 
+                    />
+
+            <div className="cut"></div>
+            <label for="firstname" className="placeholder">Email Address</label>
+            </div>
+
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="password" 
+                    placeholder=" " 
+                    value={password}
+                    onChange={handlePasswordChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Password</label>
+            </div>
+
+            
+                
+                    
+                    <br></br>
+                    <button type="submit" className="login-page-button">Login</button>
+                    <br></br>
+                    <br></br>
+                    </form>
+                    <button className='create-account-button' onClick={() => setShowModal(true)}>Create Account</button>
+            </div>
+            
+            </div>
+
+        
+        
     )
 }
 
