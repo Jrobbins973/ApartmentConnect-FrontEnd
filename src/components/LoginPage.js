@@ -30,46 +30,12 @@ function handleSubmit(e){
     setEmail("")
     setPassword("")
     fetchLogin(tenant)
-        // fetch("http://localhost:3000/login", {
-        //     method:'POST',
-        //     headers:{
-        //         'Content-Type': 'application/json',
-        //         'Accept': 'application/json'
-        // },
-        //     body:JSON.stringify(tenant)
-        // })
-        // .then (res => {
-        //     if(res.ok){
-        //         res.json().then(tenant => {
-        //             if (localStorage===null){
-        //                 localStorage.email = tenant.email_address
-        //                 updateTenant
-        //             } else {
-        //                 history.push('/dashboard')
-
-        //             }
-        //         })
-        //     } else {
-        //         res.json().then(json => setErrors(json.errors))
-        //     }
-        // })
 }
 
-// const fetchLogin = (tenant) => {
-//         fetch("http://localhost:3000/login", {
-//             method:'POST',
-//             headers:{
-//                 'Content-Type': 'application/json',
-//                 'auth-token': localStorage.uid
-//             },
-//             body: JSON.stringify(tenant)
-//         })
-//         .then(res => res.json())
-//         .then(tenant => localStorage.uid = tenant.uid, setCurrentTenant(tenant), setIsLoggedIn(true))
-        
-// }
 
-// console.log(currentTenant)
+
+
+
 const fetchLogin = (tenant) => {
     fetch("http://localhost:3000/login", {
         method:'POST',
@@ -79,19 +45,20 @@ const fetchLogin = (tenant) => {
         },
         body: JSON.stringify(tenant)
     })
-    .then(res => res.json())
-    .then(r => {
-        if (r.email_address) {
-            localStorage.removeItem('error')
-            localStorage.email = r.email_address
-            localStorage.uid = r.id
-            setCurrentTenant(r)
-            setIsLoggedIn(true)
+    .then(res => {
+        if(res.ok) {
+            res.json()
+            .then(tenantData => {
+                localStorage.email = tenantData.email_address 
+                localStorage.uid = tenantData.id
+                setCurrentTenant(tenantData)
+                setIsLoggedIn(true)
+            })
         } else {
-            localStorage.error = "invalid email/password combination"
+            alert("Incorrect Email / Password Combination")
         }
-        toggleLoggedIn()
-    })
+    } )
+
     
 }
 
@@ -160,7 +127,7 @@ const toggleForm = () => {
 
 
     return (
-       
+
         <div className='login-page'>
             <h1 style={{color: "white"}}>Welcome To Edison Lofts</h1>
 
