@@ -22,25 +22,21 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [events, setEvents] = useState([])
   const [recentEvents, setRecentEvents] = useState([])
+  const [maintenanceRequests, setMaintenanceRequests] = useState([])
   const history = useHistory()
 
 
   const toggleLoggedIn = () => {
     setIsLoggedIn(true)
   }
-  // const updateTenant = (r) => {
-  //   if(isLoggedIn) {
-  //     setCurrentTenant(r)
-  // } else
-  // console.log("error in APP")
-  
-    // useEffect(() => {
-    //     if(localStorage.email) {
-    //         setIsLoggedIn(true)
-    //     } else {
-    //         console.log("login issue")
-    //     }
-    // })
+
+  useEffect(() => {
+    fetch('http://localhost:3000/maintenance_requests')
+    .then(res => res.json())
+    .then(setMaintenanceRequests)
+  },[])
+
+  // console.log(maintenanceRequests)
 
     // LOGOUT
     const handleLogout = () => {
@@ -158,7 +154,9 @@ useEffect(() => {
         <Route path = '/maintenance'>
           <MaintenanceRequest 
           handleLogout={handleLogout} 
-          currentTenant={currentTenant} />
+          currentTenant={currentTenant}
+          setMaintenanceRequests={setMaintenanceRequests} 
+          maintenanceRequests={maintenanceRequests}/>
         </Route>
 
       </Switch>
