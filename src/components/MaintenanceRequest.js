@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { send } from 'emailjs-com';
 
 function MaintenanceRequest(props) {
-    const {setShowMaintenanceModal, currentTenant} = props
+    const {setShowMaintenanceModal, currentTenant, setMaintenanceRequests, maintenanceRequests} = props
 
 
 
@@ -18,6 +18,10 @@ function MaintenanceRequest(props) {
     
         const onSubmit = (e) => {
             e.preventDefault();
+            // const newRequest = {
+            //     tenant_id: currentTenant.id,
+            //     description: toSend.message,
+            // }
             send(
                 'service_twl70bl',
                 'template_zpfzern',
@@ -39,12 +43,26 @@ function MaintenanceRequest(props) {
                 .catch((err) => {
                     alert('FAILED...', err);
                 });
+                // createRequest(newRequest)
             };
 
 
     const handleChange = (e) => {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
+
+    // const createRequest = (newRequest) => {
+    //     fetch('http://localhost:3000/maintenance_requests', {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/json'
+    //         },
+    //         body:JSON.stringify(newRequest)
+    //     })
+    //     .then( res => res.json)
+    //     .then(newRequestData => setMaintenanceRequests([...maintenanceRequests, newRequestData]))
+    // }
 
 
 

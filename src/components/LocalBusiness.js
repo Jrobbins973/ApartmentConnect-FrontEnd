@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer} from "@react-google-maps/api"
 import {FaLocationArrow, FaTimes} from 'react-icons/fa' 
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import {useHistory} from 'react-router-dom'
 
 function LocalBusiness(props) {
@@ -60,7 +61,7 @@ const center = {lat: 40.7828, lng: -74.2374}
 
     return (
         <div>
-            <button onClick={() => history.push('/dashboard')}>Back</button>
+            <button onClick={() => history.push('/dashboard')}> <BsFillArrowRightCircleFill /> </button>
             
 
             <form className='map-form' >

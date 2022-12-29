@@ -7,13 +7,14 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 function LoginPage(props) {
 const {updateTenant, setErrors, currentTenant, toggleLoggedIn, setIsLoggedIn, isLoggedIn, setCurrentTenant} = props
 
-// sign-in
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [createNewAccount, setCreateNewAccount] = useState(false)
 const history = useHistory()
 const [showModal, setShowModal] = useState(false)
 
+
+// sign-in
 function handleEmailChange(e){
 setEmail(e.target.value)
 }
@@ -68,34 +69,10 @@ const fetchLogin = (tenant) => {
     return (
 
         <div className='login-page'>
-            {/* <h1 style={{color: "white"}}>Welcome To Edison Lofts</h1> */}
-
-            {/* // LOGIN FORM
-            <form className='login-form' onSubmit={handleSubmit}>
-            <label>Email:</label>
-                <input 
-                type="text" 
-                name="Email"
-                value={email}
-                onChange={handleEmailChange}
-                />
-
-                <label>Password:</label>
-                <input 
-                type="password" 
-                name="password"
-                value={password}
-                onChange={handlePasswordChange}
-                />
-                <br></br>
-                <br></br>
-                <input type="submit" value="Login"/>
-                <br></br>
-                <br></br>
-                <p onClick={() => setShowModal(true)}>Don't have an account? Click here to register!</p>
-            </form> */}
+            
             {showModal ? <CreateAccountModal setShowModal = {setShowModal}/> : null}
             {isLoggedIn ? history.push('/dashboard') : null}
+
 
         <div className="form">
                 <form onSubmit={handleSubmit}>
@@ -130,16 +107,13 @@ const fetchLogin = (tenant) => {
             <div className="cut"></div>
             <label for="lastname" className="placeholder">Password</label>
             </div>
-
-            
-                
-                    
                     <br></br>
                     <button type="submit" className="login-page-button">Login</button>
                     <br></br>
                     <br></br>
                     </form>
                     <button className='create-account-button' onClick={() => setShowModal(true)}>Create Account</button>
+
             </div>
             
             </div>

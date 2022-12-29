@@ -55,7 +55,7 @@ const handleCreateAccount = e => {
     .then( res => {
         if(res.ok){
             res.json().then(newTenant => console.log(newTenant))
-            alert("Account Created Successfully")
+            alert("Account Created Successfully, Don't forget to add your lease information!")
             setShowModal(false)
         } else {
             res.json().then(json => alert(json.errors))
@@ -69,7 +69,7 @@ return (
             </div>
             <div className='modal-body'>
             <div className="form">
-                <form onSubmit={handleCreateAccount}>
+            <form onSubmit={handleCreateAccount}>
             <div className="title">Create Account</div>
             <div className="subtitle">  </div>
             
