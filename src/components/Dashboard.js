@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import DashboardEvents from './DashboardEvents'
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer} from "@react-google-maps/api"
+import MaintenanceRequest from './MaintenanceRequest'
 // import { Switch, Route, Link } from "react-router-dom";
 
 // import { Header, Image } from 'semantic-ui-react'
@@ -18,6 +19,7 @@ function Dashboard(props) {
         setCurrentTenant
         } = props
     const history = useHistory()
+    const [showMaintenanceModal, setShowMaintenanceModal] = useState(false)
 
 // fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
         useEffect(() => {
@@ -61,7 +63,7 @@ function Dashboard(props) {
                 <li onClick={() => history.push('/events')}><p>EVENTS</p></li>
                 <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li>
                 <li onClick={() => history.push('/local_businesses')}><p>MAP</p></li>
-                <li onClick={() => history.push('/maintenance')}><p>REQUEST MAINTENANCE</p></li>
+                <li onClick={() => setShowMaintenanceModal(true)}><p>REQUEST MAINTENANCE</p></li>
                 <li onClick={handleLogout}><p>LOGOUT</p></li>
             </ul>
             </div>
@@ -98,11 +100,11 @@ function Dashboard(props) {
                             
                             
                         </GoogleMap>
-        </div>
+                        </div>
                         </div>
                 </div>
 
-
+            {showMaintenanceModal ? <MaintenanceRequest setShowMaintenanceModal={setShowMaintenanceModal}/> : null}
     
         </div>
     )
