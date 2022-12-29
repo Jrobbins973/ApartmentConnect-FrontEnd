@@ -81,7 +81,9 @@ function handleForumSubmission(e){
             </ul>
             </div>
         </div>
-            <div className='forum-submission-form-box'>
+
+        {/* Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section */}
+            {/* <div className='forum-submission-form-box'>
             <form className='forum-submission-form' onSubmit={handleForumSubmission}>
             <label>Your Message</label>
                 <input 
@@ -104,7 +106,46 @@ function handleForumSubmission(e){
                 <br></br>
                 <input type="submit" value="Post"/>
             </form>
+            </div> */}
+
+            <div class="login-box">
+            <h2>What's on your mind?</h2>
+            <form onSubmit={handleForumSubmission}>
+
+                <div class="user-box">
+                    <input 
+                    type="text" 
+                    name="" 
+                    value={postText}
+                    onChange={handleTextChange}
+                    />
+                <label>Post Content</label>
+                </div>
+
+                <div class="user-box">
+                <label className='category-dropdown-text' for="my-dropdown">Category:</label>
+                    <select className='category-dropdown' id="my-dropdown" name="my-dropdown" onChange={handleDropDownChange}>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                        <option value="Buying / Selling">Buying / Selling</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Need Help">Need Help</option>
+
+                    </select>
+                <label>Category</label>
+                </div>
+                <button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Post
+                </button>
+            </form>
             </div>
+
+             {/* Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section Forum Post Section */}
+            
+            {/* individual posts */}
             <div className='forum-post-box'>
             {renderForumPosts}
             </div>
