@@ -68,39 +68,6 @@ return (
             <div className='modal-header'>
             </div>
             <div className='modal-body'>
-            {/* <form onSubmit={handleCreateAccount} className='login-form'>
-            <label>First Name:</label>
-            <input
-            type='text'
-            value={firstName}
-            onChange={handleFirstNameChange}
-            />
-            <label>Last Name:</label>
-            <input
-            type='text'
-            value={lastName}
-            onChange={handleLastNameChange}
-            />
-            <label>Phone Number:</label>
-            <input
-            type='text'
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-            />
-            <label>Email Address:</label>
-            <input
-            type='text'
-            value={newEmailAddress}
-            onChange={handleNewEmailChange}
-            />
-            <label>Password:</label>
-            <input
-            type='text'
-            value={newPassword}
-            onChange={handleNewPasswordChange}
-            />
-            <input  type="submit" value="Submit"/>
-            </form> */}
             <div className="form">
                 <form onSubmit={handleCreateAccount}>
             <div className="title">Create Account</div>
@@ -183,7 +150,7 @@ return (
 
 
             <br></br>
-            <button type="submit" className="login-page-button">Login</button>
+            <button type="submit" className="login-page-button">Create</button>
             <br></br>
             <br></br>
             </form>

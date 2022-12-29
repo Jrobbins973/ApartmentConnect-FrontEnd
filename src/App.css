@@ -328,7 +328,7 @@
 
 .forum-post-box {
   overflow: auto;
-  height: 900px;
+  height: 690px;
   width: 100%;
   position: absolute;
 }
@@ -633,6 +633,33 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   
 }
 
+.tenant-details h4{
+  position: relative;
+  top: -80px;
+  left: 50px;
+  border: 1px solid black;
+  width: 200px;
+  transition: all 0.1s;
+}
+
+.tenant-details h4:hover{
+  text-decoration: line-through;
+  text-decoration-color: red;
+  cursor: pointer;
+}
+
+
+.tenant-details p{
+  position: relative;
+  top: -60px;
+  left: 50px;
+  border: 1px solid black;
+  width: 200px;
+  font-weight: bold;
+
+}
+
+
 
 .event-homepage-background {
   background-image: url("https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg");
@@ -732,9 +759,11 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   color: white;
   margin: auto;
   position: relative;
-  font-size: 20px;
-  width: 500px;
-  top: 70px;
+  font-size: 18px;
+  width: 650px;
+  /* height: 20px; */
+  text-align: center;
+  top: 50px;
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;
 }
 
@@ -743,8 +772,10 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 .alert.info {
-  background-color: #2196F3; /* Blue */
+  background-color: rgb(67, 67, 98);
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgb(77, 77, 77);
 }
 
 .alert.warning {

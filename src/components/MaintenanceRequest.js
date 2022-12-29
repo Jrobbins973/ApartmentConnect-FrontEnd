@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { send } from 'emailjs-com';
 
 function MaintenanceRequest(props) {
-    const {currentTenant} = props
+    const {setShowMaintenanceModal, currentTenant} = props
 
 
 
@@ -28,15 +28,16 @@ function MaintenanceRequest(props) {
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
                     alert("Request Sent")
+                    setShowMaintenanceModal(false)
                     setToSend({
                         from_name: '',
-                        to_name: '',
+                        to_name: 'Management',
                         message: '',
-                        reply_to: ''
+                        reply_to: ``
                     })
                 })
                 .catch((err) => {
-                    console.log('FAILED...', err);
+                    alert('FAILED...', err);
                 });
             };
 
@@ -51,7 +52,99 @@ function MaintenanceRequest(props) {
 
     return (
     <div>
-    <form className='login-form' onSubmit={onSubmit}>
+
+        <div>
+        <div className='modal'  onClick={() => setShowMaintenanceModal(false)}>
+        <div className='modal-content' onClick={e => e.stopPropagation()}>
+            <div className='modal-header'>
+            </div>
+            <div className='modal-body'>
+            <div className="form">
+
+        <form onSubmit={onSubmit}>
+            <div style={{fontSize: "28px"}} className="title">Request Maintenance</div>
+            <div className="subtitle">  </div>
+            
+            {/* FIRST NAME INPUT */}
+            <div className="input-container ic1">
+                    <input 
+                    id="firstname" 
+                    className="input" 
+                    type="text" 
+                    name='from_name'
+                    placeholder=" "
+                    value={toSend.from_name}
+                    onChange={handleChange}
+                    />
+
+            <div className="cut"></div>
+            <label for="firstname" className="placeholder">Full Name</label>
+            </div>
+
+            {/* LAST NAME INPUT */}
+            {/* <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                 
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Send to:</label>
+            </div> */}
+                
+            {/* Request INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text" 
+                    placeholder=" " 
+                    name='message'
+                    value={toSend.message}
+                    onChange={handleChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Request</label>
+            </div>
+
+            {/* EMAIL INPUT */}
+            <div className="input-container ic2">
+                    <input 
+                    id="lastname" 
+                    className="input" 
+                    type="text"
+                    name='reply_to' 
+                    placeholder=" " 
+                    value={toSend.reply_to}
+                    onChange={handleChange}
+                    />
+                    
+            <div className="cut"></div>
+            <label for="lastname" className="placeholder">Email Address</label>
+            </div>
+
+
+
+            <br></br>
+            <button type="submit" className="login-page-button">Submit Request</button>
+            <br></br>
+            <br></br>
+            </form>
+            </div>
+            </div>
+            <div className='modal-footer'>
+        
+            </div>
+        </div>
+    </div>
+        </div>
+
+
+    {/* <form className='login-form' onSubmit={onSubmit}>
     <input
         type='text'
         name='from_name'
@@ -63,7 +156,7 @@ function MaintenanceRequest(props) {
         type='text'
         name='to_name'
         placeholder='Management'
-        value={toSend.to_name}
+        value="Management"
         onChange={handleChange}
     />
     <input
@@ -81,7 +174,7 @@ function MaintenanceRequest(props) {
         onChange={handleChange}
     />
     <input  type="submit" value="Submit"/>
-</form>
+</form> */}
 
 
 
