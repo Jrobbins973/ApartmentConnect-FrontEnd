@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background-image: url('http://www.minnowasko.com/mw/wp-content/gallery/edison-lofts/3-main-st-20141009.jpg'); */
-  background-color: #303245;
+  background-color: #222222;
   position: absolute;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   /* height: 100%;
   background-size: cover; */
   height: 100%;
-  background-color: #303245;
+  background-color: #222222;
 }
 
 
@@ -348,7 +348,7 @@
   max-width: 100%;
   box-shadow: none;
   /* background: linear-gradient(90deg, #0be2bb 0%, #3F5EFB 100%); */
-  background-color: rgb(67, 67, 98);
+  background-color: #3f3f3f;
   position: fixed;
   height: 40px!important;
   overflow: hidden;
@@ -389,7 +389,7 @@
   transform: translateX(-250px);
   transition: transform 250ms ease-in-out;
   /* background: linear-gradient(180deg, #0be2bb 0%, #3F5EFB 100%); */
-  background-color: rgb(67, 67, 98);
+  background-color: #3f3f3f;
 
 }
 .sidebarMenuInner{
@@ -405,10 +405,11 @@
   padding: 20px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.372);
-  transition: box-shadow 0.2s;
+  transition: all 0.1s;
 }
 .sidebarMenuInner li:hover {
-  box-shadow: inset 0px 5px 5px #ccc;
+  box-shadow: inset 0px 0px 15px #ccc;
+  font-size: 16px;
 }
 
 .sidebarMenuInner li span{
@@ -658,6 +659,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 .upcoming-events-box {
   position: absolute;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   width: 550px;
   height: 450px;
   border-radius: 15px;
@@ -675,6 +677,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 .upcoming-events-box h1 {
   box-shadow: 0 5px 5px rgb(0, 0, 0);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   border-radius: 15px;
   transition: all 0.75s;
   color: white;
@@ -727,9 +730,12 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   padding: 20px;
   background-color: #f44336; /* Red */
   color: white;
-  margin-bottom: 15px;
+  margin: auto;
   position: relative;
-  top: 75px;
+  font-size: 20px;
+  width: 500px;
+  top: 70px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;
 }
 
 .alert.success {
@@ -738,6 +744,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 .alert.info {
   background-color: #2196F3; /* Blue */
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
 .alert.warning {
@@ -831,9 +838,9 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 .modal-body {
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  /* padding: 10px; */
+  /* border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; */
 }
 
 /* LOGIN FORM - NEW */
@@ -848,11 +855,17 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 320px;
   margin: auto;
   top: 10%;
+  box-shadow: 0 0 10px #000, 0px 0px 12px #ccc;
+  transition: all 0.2s;
 }
+
+/* .form:hover {
+  transform: scale(0.9);
+} */
 
 .title {
   color: #eee;
-  font-family: sans-serif;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
@@ -861,7 +874,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 .subtitle {
   color: #eee;
-  font-family: sans-serif;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   font-size: 12px;
   font-weight: 600;
   margin-top: 0px;
@@ -973,7 +986,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   cursor: pointer;
   display: inline-flex;
   flex: 1 1 auto;
-  font-family: Inter,sans-serif;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   justify-content: center;
@@ -1009,7 +1022,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   cursor: pointer;
   display: inline-flex;
   flex: 1 1 auto;
-  font-family: Inter,sans-serif;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   justify-content: center;
