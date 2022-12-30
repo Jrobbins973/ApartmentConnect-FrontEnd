@@ -1,21 +1,15 @@
-import React, {useState} from 'react'
-
+import React, {useState,useEffect} from 'react'
+import ForumPostModal from './ForumPostModal'
 import {AiFillDelete} from 'react-icons/ai' 
 
 const defaultAvatar = 'https://img.freepik.com/free-icon/user_318-804790.jpg?w=2000'
 
 function ForumPosts(props) {
     const {post, deletePost, currentTenant} = props
-    // console.log(post)
-    const [hover, setHover] = useState(false);
+    const [showDetailsModal, setShowDetailsModal] = useState(false)
+    const [postDetails, setPostDetails] = useState([])
 
-    const onHover = () => {
-    setHover(true);
-    };
 
-    const onLeave = () => {
-    setHover(false);
-    };
 
     const handleDelete = () => {
         fetch(`http://localhost:3000/forum_posts/${post.id}`, {
@@ -24,6 +18,17 @@ function ForumPosts(props) {
         deletePost(post.id)
     }
 
+    // RENDER POST DETAILS
+    const renderPostDetails = () => {
+        fetch(`http://localhost:3000/forum_posts/${post.id}`)
+        .then(res => res.json())
+        .then(setPostDetails)
+    }
+
+function handleModal(){
+    setShowDetailsModal(true)
+    renderPostDetails()
+}
 
     // changes color based on category
     let postCategory = post.category
@@ -51,8 +56,11 @@ function ForumPosts(props) {
         {/* ternary for displaying delete button */}
     {currentTenant.id === post.tenant_id ? <button className='forum-delete-button' onClick={handleDelete}> <AiFillDelete/> </button> : null}
         {/* ternary for displaying delete button */}
-        <button onClick={() => console.log(post.id)}>Click Me</button>
+        <button onClick={handleModal}>Click Me For Details</button>
 </div>
+
+        {/* MODAL */}
+        {showDetailsModal ? <ForumPostModal setShowDetailsModal={setShowDetailsModal} postDetails={postDetails}/> : null}
     </div>
     )
 }
