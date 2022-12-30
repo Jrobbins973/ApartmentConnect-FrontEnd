@@ -48,14 +48,10 @@ function ForumPosts(props) {
         </div>
         <p style={style}>{post.category}</p>
         
-    {currentTenant.id === post.tenant_id ? <button className='forum-delete-button'
-        onMouseEnter={onHover}
-        onMouseLeave={onLeave}
-        onClick={handleDelete}>
-            <AiFillDelete/>
-            </button> : null}
-        
-
+        {/* ternary for displaying delete button */}
+    {currentTenant.id === post.tenant_id ? <button className='forum-delete-button' onClick={handleDelete}> <AiFillDelete/> </button> : null}
+        {/* ternary for displaying delete button */}
+        <button onClick={() => console.log(post.id)}>Click Me</button>
 </div>
     </div>
     )
