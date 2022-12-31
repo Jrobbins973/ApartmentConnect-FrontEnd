@@ -163,14 +163,17 @@
     /* Add a border and some padding to the container */
     border: 1px solid rgb(0, 0, 0);
     padding: 30px;
+    color: white;
     width: 60%;
     position: relative;
     left: 37%;
     margin-bottom: 10px;
     margin-top: 5px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.502);
     border-radius: 15px;
     transition: all 0.2s;
+    overflow: auto;
+    height: 200px;
   }
 
   .forum-post:hover{
@@ -185,22 +188,32 @@
     border: 1px solid black;
     border-radius: 15px;
     width: 100px;
+    color: black;
     /* background-color: #2196F3; */
   }
+
+  /* button to show comments */
+  .forum-comments-button {
+    position: relative;
+    top: 0px;
+  }
+
     /* Add some style to the header */
   .post-header {
-      display: flex;
-      width: 200px;
+      display: relative;
+      text-align: center;
+      width: 700px;
       border-radius: 15px;
       border: 1px solid black;
       top: -20px;
       font-size: 18px;
-      justify-content: left;
+      margin: auto;
+      /* justify-content: left; */
       font-weight: bold;
       margin-bottom: 10px;
       background-color: rgb(255, 255, 255);
       color: black;
-      box-shadow: 5px 10px 10px grey; 
+      box-shadow: 0px 0px 10px #03e9f4; 
     }
       /* Add an avatar image */
       .avatar {
@@ -216,8 +229,10 @@
       position: relative;
       font-size: 16px;
       line-height: 1.5;
-      width: 500px;
-      left: 200px;
+      width: 600px;
+      left: 0px;
+      bottom: 0px;
+      margin: auto;
     }
   
 
@@ -1330,3 +1345,4 @@ font-size: 14px;
   width: 100%;
   height: 50px;
 }
+

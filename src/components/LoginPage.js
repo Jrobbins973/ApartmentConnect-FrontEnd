@@ -88,6 +88,7 @@ const fetchLogin = (tenant) => {
                     placeholder=" "
                     value={email}
                     onChange={handleEmailChange} 
+                    required
                     />
 
             <div className="cut"></div>
@@ -102,6 +103,7 @@ const fetchLogin = (tenant) => {
                     placeholder=" " 
                     value={password}
                     onChange={handlePasswordChange}
+                    required
                     />
                     
             <div className="cut"></div>
