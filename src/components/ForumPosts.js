@@ -45,22 +45,30 @@ function handleModal(){
     <div className='forum-post-container'>
     <div className='forum-post'>
         <div className="post-header">
-        <img className="avatar" src={defaultAvatar} alt="User avatar"/>
-    <div>{post.full_tenant_name}</div>
+            {/* <img className="avatar" src={defaultAvatar} alt="User avatar"/> */}
+            {post.full_tenant_name} | {post.category}
         </div>
         <div className="forum-post-body">
             {post.text}
         </div>
-        <p style={style}>{post.category}</p>
+        {/* <p style={style}>{post.category}</p> */}
         
         {/* ternary for displaying delete button */}
     {currentTenant.id === post.tenant_id ? <button className='forum-delete-button' onClick={handleDelete}> <AiFillDelete/> </button> : null}
         {/* ternary for displaying delete button */}
-        <button onClick={handleModal}>Click Me For Details</button>
+        <br></br>
+        <button className='forum-comments-button' onClick={handleModal}>Comments</button>
 </div>
 
         {/* MODAL */}
-        {showDetailsModal ? <ForumPostModal setShowDetailsModal={setShowDetailsModal} postDetails={postDetails}/> : null}
+        {showDetailsModal ? <ForumPostModal 
+        setShowDetailsModal={setShowDetailsModal} 
+        postDetails={postDetails} 
+        post={post}
+        setPostDetails={setPostDetails}
+        /> 
+        : 
+        null}
     </div>
     )
 }

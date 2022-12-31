@@ -82,6 +82,7 @@ return (
                     placeholder=" "
                     value={firstName}
                     onChange={handleFirstNameChange}
+                    required
                     />
 
             <div className="cut"></div>
@@ -97,6 +98,7 @@ return (
                     placeholder=" " 
                     value={lastName}
                     onChange={handleLastNameChange}
+                    required
                     />
                     
             <div className="cut"></div>
@@ -112,6 +114,7 @@ return (
                     placeholder=" " 
                     value={phoneNumber}
                     onChange={handlePhoneNumberChange}
+                    required
                     />
                     
             <div className="cut"></div>
@@ -127,6 +130,7 @@ return (
                     placeholder=" " 
                     value={newEmailAddress}
                     onChange={handleNewEmailChange}
+                    required
                     />
                     
             <div className="cut"></div>
@@ -142,6 +146,7 @@ return (
                     placeholder=" " 
                     value={newPassword}
                     onChange={handleNewPasswordChange}
+                    required
                     />
                     
             <div className="cut"></div>
