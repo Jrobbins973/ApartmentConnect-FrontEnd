@@ -57,7 +57,7 @@ function handleModal(){
     {currentTenant.id === post.tenant_id ? <button className='forum-delete-button' onClick={handleDelete}> <AiFillDelete/> </button> : null}
         {/* ternary for displaying delete button */}
         <br></br>
-        <button className='forum-comments-button' onClick={handleModal}>Comments</button>
+        <button className='button-16' onClick={handleModal}>Comments</button>
 </div>
 
         {/* MODAL */}

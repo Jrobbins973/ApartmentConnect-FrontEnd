@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import DashboardEvents from './DashboardEvents'
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer} from "@react-google-maps/api"
 import MaintenanceRequest from './MaintenanceRequest'
+import LeaseForm from './LeaseForm'
 // import { Switch, Route, Link } from "react-router-dom";
 
 // import { Header, Image } from 'semantic-ui-react'
@@ -20,6 +21,7 @@ function Dashboard(props) {
         } = props
     const history = useHistory()
     const [showMaintenanceModal, setShowMaintenanceModal] = useState(false)
+    const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
 
 // fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
         useEffect(() => {
@@ -42,7 +44,7 @@ function Dashboard(props) {
     }
   // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
 
-
+console.log(currentTenant.leases.length)
   const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         
@@ -69,14 +71,18 @@ function Dashboard(props) {
             </div>
 </div>
                 <div>
+                    {currentTenant.leases.length > 0 ? null : <button className='alert info' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button>}
                     <h1 className='alert info'>Announcement: Elevator #4 will be down for maintenance today (12/23/22) </h1>
-                    
                     <div className='upcoming-events-box'>
                         <h1 onClick={() => history.push('/events')}>Upcoming Events</h1>
                         <div>
                         {renderRecentEvents}
                         </div>
                     </div>
+
+
+                    {showLeaseFormModal ? <LeaseForm setShowLeaseFormModal = {setShowLeaseFormModal}/> : null}
+
 
                     <div className='business-shoutout-box'>
                         <h1 onClick={() => history.push('/local_businesses')}>Business Spotlight</h1>
