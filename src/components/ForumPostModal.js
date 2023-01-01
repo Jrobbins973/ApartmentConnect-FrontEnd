@@ -10,7 +10,9 @@ const comments = postDetails.forum_post_replies ? postDetails.forum_post_replies
     <ForumPostComments 
     key={reply.id}
     reply={reply}
-    />) : <p>No comments yet.. be the first!</p>
+    postDetails={postDetails}
+    setPostDetails={setPostDetails}
+    />) : null
 
 // console.log(postDetails)
 
@@ -18,7 +20,7 @@ const handleReplyChange = e => {
     setReply(e.target.value)
 }
 
-
+// ADD REPLIES // ADD REPLIES// ADD REPLIES// ADD REPLIES// ADD REPLIES// ADD REPLIES
 const addReply = e => {
     e.preventDefault()
     const newReply = {
@@ -39,7 +41,7 @@ const addReply = e => {
 
     setReply("")
 }
-
+// ADD REPLIES // ADD REPLIES// ADD REPLIES// ADD REPLIES// ADD REPLIES// ADD REPLIES
 
 
     return (
@@ -51,15 +53,18 @@ const addReply = e => {
                     </h4>
                 
                 </div>
-                <div className='forum-details-modal-body'>
-                    {postDetails.text}</div>
+
+                <div className='forum-details-modal-body'> 
+                {postDetails.text}
+                </div>
                 
                 <div className='forum-details-modal-footer'>
                 </div>
-                <br></br>
+                
+                <h3>Replies</h3> 
                 {comments}
                 <br></br>
-                <p>Add a comment!</p>
+                <span>Add a comment!</span>
 
 
                 {/* COMMENT FORM */}

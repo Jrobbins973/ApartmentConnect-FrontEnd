@@ -14,8 +14,8 @@ function TenantProfile(props) {
     //     .then(setTenant)
     // },[])
 
-
-const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>)
+const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
+// const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>)
 // const renderTenantMaintenanceRequest = currentTenant.maintenance_requests.map(request => <TenantMaintenance key={request.id} request={request} currentTenant={currentTenant} />)
 
 
@@ -51,7 +51,7 @@ const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key
             </div>
         </div>
             {/* {renderTenantMaintenanceRequest} */}
-            {renderTenantDetails}
+            {leaseInfo}
         </div>
     )
 }
