@@ -635,9 +635,35 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 .tenant-rent-info {
-  border: 1px solid black;
+  /* border-top: 1px solid black; */
   position: relative;
   width: 50%;
+  top: 53px;
+}
+
+.tenant-contact-info {
+  left: 50%;
+  /* border-top: 1px solid black; */
+  position: relative;
+  width: 50%;
+  bottom: 75px;
+}
+
+.tenant-forum-activity-box{
+  overflow: auto;
+  /* border: 1px solid black; */
+  width: 50%;
+  height: 35%;
+}
+
+.tenant-forum-activity {
+  /* border: 1px solid black; */
+  width: 100%;
+  transition: all 0.1s;
+}
+.tenant-forum-activity:hover {
+  box-shadow: inset 0px 0px 10px #06b;
+  cursor: pointer;
 }
 /* 
 .tenant-details h2 {
@@ -1445,5 +1471,4 @@ font-size: 14px;
   background-color: white;
   position: relative;
   /* bottom: 200px; */
-  
 }

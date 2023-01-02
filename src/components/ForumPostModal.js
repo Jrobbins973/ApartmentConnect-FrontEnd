@@ -49,7 +49,7 @@ const addReply = e => {
             <div className='forum-details-modal-content' onClick={e => e.stopPropagation()}>
                 <div className='forum-details-modal-header'>
                     <h4 className='forum-details-modal-title'>
-                        {post.full_tenant_name} | {postDetails.category}
+                        {post.full_tenant_name}  | {postDetails.category}
                     </h4>
                 
                 </div>
@@ -79,6 +79,7 @@ const addReply = e => {
                     </form>
                 {/* COMMENT FORM */}
 
+<button onClick={() => setShowDetailsModal(false)}>close</button>
                 
             </div>
         </div>
