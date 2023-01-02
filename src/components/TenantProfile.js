@@ -15,8 +15,9 @@ function TenantProfile(props) {
     // },[])
 
 const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
-// const renderTenantDetails = currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>)
-// const renderTenantMaintenanceRequest = currentTenant.maintenance_requests.map(request => <TenantMaintenance key={request.id} request={request} currentTenant={currentTenant} />)
+
+
+
 
 
     return (

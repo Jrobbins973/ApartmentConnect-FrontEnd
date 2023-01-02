@@ -634,6 +634,12 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   right: 470px;
 }
 
+.tenant-rent-info {
+  border: 1px solid black;
+  position: relative;
+  width: 50%;
+}
+/* 
 .tenant-details h2 {
   position: relative;
   font-size: 50px;
@@ -674,7 +680,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 200px;
   font-weight: bold;
 
-}
+} */
 
 
 
