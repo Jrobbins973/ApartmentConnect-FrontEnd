@@ -903,7 +903,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 320px;
   margin: auto;
   top: 10%;
-  box-shadow: 0 0 10px #000, 0px 0px 12px #ccc;
+  /* box-shadow: 0 0 10px #000, 0px 0px 12px #ccc; */
   transition: all 0.2s;
 }
 

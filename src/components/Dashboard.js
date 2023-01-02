@@ -81,7 +81,11 @@ console.log(currentTenant.leases.length)
                     </div>
 
 
-                    {showLeaseFormModal ? <LeaseForm setShowLeaseFormModal = {setShowLeaseFormModal}/> : null}
+                    {showLeaseFormModal ? <LeaseForm 
+                    setShowLeaseFormModal = {setShowLeaseFormModal}
+                    currentTenant={currentTenant}
+                    setCurrentTenant={setCurrentTenant}
+                    /> : null}
 
 
                     <div className='business-shoutout-box'>
