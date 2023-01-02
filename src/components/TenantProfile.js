@@ -4,7 +4,7 @@ import TenantMaintenance from './TenantMaintenance'
 import {useHistory} from 'react-router-dom'
 
 function TenantProfile(props) {
-    const {currentTenant, handleLogout} = props
+    const {currentTenant, handleLogout, setCurrentTenant} = props
     const history = useHistory()
     // const [tenant, setTenant] = useState({})
 
@@ -17,6 +17,12 @@ function TenantProfile(props) {
 const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
 
 
+// fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
+useEffect(() => {
+    fetch(`http://localhost:3000/tenants/${localStorage.uid}`)
+    .then(res => res.json())
+    .then(setCurrentTenant)
+},[])
 
 
 

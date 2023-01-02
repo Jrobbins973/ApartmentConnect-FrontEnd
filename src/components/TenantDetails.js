@@ -4,11 +4,15 @@ import TenantForumPosts from './TenantForumPosts'
 function TenantDetails(props) {
     const {lease, currentTenant} = props
 
-    const tenantForumPosts = currentTenant.forum_posts ? currentTenant.forum_posts.map(posts => <TenantForumPosts key={posts.id} posts={posts}/>) : null
+    const tenantForumPosts = currentTenant.forum_posts ? currentTenant.forum_posts.map(post => <TenantForumPosts key={post.id} post={post}/>) : null
+        
+    
+ 
+    
     // const renderTenantMaintenanceRequest = currentTenant.maintenance_requests.map(request => <h4>{request.description}</h4>)
     return (
         <div className='tenant-details'>
-            <h1>{currentTenant.first_name}</h1>
+            {/* <h1>{currentTenant.first_name}</h1> */}
             
             <div className='tenant-rent-info'>
 
@@ -17,8 +21,18 @@ function TenantDetails(props) {
             <h3>Next Payment: {lease.rent_duedate}</h3>
             </div>
             
-            <p>My Activity</p>
+            <div className='tenant-contact-info'>
+            <h2>Contact Information</h2>
+            <h4>Cell: {currentTenant.phone_number}</h4>
+            <h4>Email: {currentTenant.email_address}</h4>
+
+            </div>
+            <h1> My Activity</h1>
+            <div className='tenant-forum-activity-box'>
+            <h2>Recent Posts</h2>
+
             {tenantForumPosts}
+            </div>
         </div>
         
     )

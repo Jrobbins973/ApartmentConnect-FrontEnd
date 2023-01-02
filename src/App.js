@@ -128,7 +128,8 @@ useEffect(() => {
         <Route path = '/my_profile'>
           <TenantProfile 
           handleLogout={handleLogout} 
-          currentTenant={currentTenant}/>
+          currentTenant={currentTenant}
+          setCurrentTenant={setCurrentTenant}/>
         </Route>
 
         <Route path = '/events'>

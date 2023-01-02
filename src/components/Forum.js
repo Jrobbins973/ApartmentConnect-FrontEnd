@@ -125,11 +125,12 @@ function handleForumSubmission(e){
                 <div class="user-box">
                 <label className='category-dropdown-text' for="my-dropdown">Category:</label>
                     <select className='category-dropdown' id="my-dropdown" name="my-dropdown" onChange={handleDropDownChange}>
+                        <option value="Select">Select Category</option>
                         <option value="Miscellaneous">Miscellaneous</option>
                         <option value="Buying / Selling">Buying / Selling</option>
                         <option value="Pets">Pets</option>
                         <option value="Need Help">Need Help</option>
-
+                        
                     </select>
                 <label>Category</label>
                 </div>
