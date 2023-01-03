@@ -14,7 +14,7 @@ function TenantProfile(props) {
     //     .then(setTenant)
     // },[])
 
-const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
+// const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
 
 
 // fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
@@ -31,7 +31,10 @@ useEffect(() => {
 
 
             <div className="header">
-            <h1 className='header'>Hello, {currentTenant.first_name}</h1>
+            <h1 className='header'>Hello {currentTenant.first_name}</h1>
+
+           
+
         <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"/>
         <label for="openSidebarMenu" className="sidebarIconToggle">
             <div className="spinner diagonal part-1"></div>
@@ -57,8 +60,9 @@ useEffect(() => {
             <div>
             </div>
         </div>
+        <TenantDetails currentTenant={currentTenant}/>
             {/* {renderTenantMaintenanceRequest} */}
-            {leaseInfo}
+            {/* {leaseInfo} */}
         </div>
     )
 }

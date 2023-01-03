@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
+import EditForumReplies from './EditForumReplies'
 
 function ForumPostComments(props) {
-    const {reply, postDetails, setPostDetails} = props
+    const {reply, postDetails, setPostDetails, post, setReply} = props
+
+
+    const [isEditing, setIsEditing] = useState(false)
 
 
 
@@ -19,11 +23,22 @@ const handleDeleteClick = () => {
     deleteReply(reply.id)
 }
 
+// {isEditing ? <EditForumReplies 
+//     postDetails={postDetails} 
+//     setPostDetails={setPostDetails} 
+//     setIsEditing={setIsEditing}
+//     reply = {reply}
+//     post={post}
+//     setReply={setReply}
 
         return (
         <div>
-            <p>{reply.text}</p>
-            <button className='reply-edit-button'>Edit</button> <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button>
+
+        <p> {reply.text}</p> 
+
+            {/* <button onClick={() => setIsEditing(true)} className='reply-edit-button'> {isEditing ? "Editing..." : "Edit"}</button>  */}
+            <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button>
+                
         </div>
         )
 }

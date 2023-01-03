@@ -23,6 +23,7 @@ function App() {
   const [events, setEvents] = useState([])
   const [recentEvents, setRecentEvents] = useState([])
   const [maintenanceRequests, setMaintenanceRequests] = useState([])
+  const [darkMode, setDarkMode] = useState(false)
   const history = useHistory()
 
 
@@ -81,8 +82,12 @@ useEffect(() => {
   .then(setRecentEvents)
 },[])
 
+const toggleDark = () => {
+    setDarkMode(!darkMode)
+}
+
   return (
-    <div className="App">
+    <div className= {`${darkMode ?  'App-light' : 'App-dark'}`}>
 
       <Switch>
 
@@ -107,7 +112,8 @@ useEffect(() => {
           setErrors={setErrors} 
           toggleLoggedIn={toggleLoggedIn} 
           setIsLoggedIn={setIsLoggedIn}
-          setCurrentTenant={setCurrentTenant}/>
+          setCurrentTenant={setCurrentTenant}
+          toggleDark={toggleDark}/>
         </Route>
 
         <Route path = '/forum'>
