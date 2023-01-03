@@ -85,6 +85,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                     <h1 className={`${darkMode ?  'alert-dark' : 'alert-light'}`}>Announcement: Elevator #4 will be down for maintenance today 
                     </h1>
 
+                    {/* DARK MODE TOGGLE BUTTON */}
                     <div class="wrapper">
                 <input onClick={() => toggleDark()} type="checkbox" id="hide-checkbox"/>
                 <label for="hide-checkbox" class="toggle">
@@ -107,7 +108,8 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                     <span class="star star-8"></span>
                 </label>
                 </div>
-
+                {/* DARK MODE TOGGLE BUTTON */}
+                
                     <div className={`${darkMode ?  'upcoming-events-box-dark' : 'upcoming-events-box-light'}`}>
                         <h1 onClick={() => history.push('/events')}>Upcoming Events</h1>
                         <div>
