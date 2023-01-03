@@ -600,7 +600,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   
 }
 
-.business-shoutout-box {
+.business-shoutout-box-light {
   position: absolute;
   width: 550px;
   height: 450px;
@@ -614,15 +614,43 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   box-shadow: 0 5px 5px rgb(0, 0, 0)
 }
 
-.business-shoutout-box h1 {
+.business-shoutout-box-light h1 {
+  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  border-radius: 15px;
+  transition: all 0.75s;
+  color: white;
+  background-color: rgb(43, 136, 212);
+}
+.business-shoutout-box-light h1:hover{
+  background-color: rgb(47, 203, 227);
+  cursor: pointer;
+}
+
+.business-shoutout-box-dark {
+  position: absolute;
+  width: 550px;
+  height: 450px;
+  border-radius: 15px;
+  top: 200px;
+  left: 55%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: #282c34;
+  margin: auto;
+  color: white;
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px rgb(0, 85, 213);
+}
+
+.business-shoutout-box-dark h1 {
   box-shadow: 0 5px 5px rgb(0, 0, 0);
   border-radius: 15px;
   transition: all 0.75s;
   color: white;
   background-color: rgb(67, 67, 98);
 }
-.business-shoutout-box h1:hover{
+.business-shoutout-box-dark h1:hover{
   background-color: rgb(98, 98, 145);
+  cursor: pointer;
 }
 
 .tenant-details {
@@ -787,7 +815,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   border: #282c34;
   margin: auto;
   border: 1px solid black;
-  box-shadow: 0 5px 5px rgb(0, 0, 0);
+  /* box-shadow: 0 5px 5px rgb(0, 0, 0); */
+  box-shadow: 0px 0px 5px rgb(0, 85, 213);
   /* background-color: white; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -814,9 +843,11 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 .upcoming-events-box-dark h1:hover {
   background-color: rgb(98, 98, 145);
+  cursor: pointer;
 }
 .upcoming-events-box-light h1:hover {
   background-color: rgb(47, 203, 227);
+  cursor: pointer;
 }
 
 
@@ -913,7 +944,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background: rgba(0,0,0,.5);
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   border-radius: 20px;
-  box-shadow: 0px 0px 15px rgb(77, 77, 77);
+  box-shadow: 0px 0px 15px rgb(0, 85, 213);
 }
 
 .alert-light{
@@ -1604,6 +1635,8 @@ font-size: 14px;
   border-radius: 50px;
   transition: 1s;
   overflow: hidden;
+  left: 110px;
+  top: -35px;
 }
 
 .toggle-button {
