@@ -709,6 +709,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   left: 5px;
   background-color: rgba(0, 0, 0, 0.66);
   border-radius: 10px;
+  border: 2px solid white
 }
 
 .tenant-contact-info-light {
@@ -719,7 +720,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   top: 53px;
   background-color: rgba(245, 245, 245, 0.660);
   border-radius: 10px;
-  height: 196px;
+  height: 200px;
   border: 2px solid black
 }
 
@@ -731,7 +732,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   top: 53px;
   background-color: rgba(0, 0, 0, 0.66);
   border-radius: 10px;
-  height: 196px;
+  height: 200px;
+  border: 2px solid white
 }
 
 
@@ -742,7 +744,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 50%;
   height: 41%;
   top: 320px;
-  left: 5px;
+  left: 300px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgba(245, 245, 245, 0.660);
@@ -755,7 +757,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   width: 50%;
   height: 41%;
   top: 320px;
-  left: 5px;
+  left: 300px;
   border: 2px solid white;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.66);
@@ -1710,6 +1712,13 @@ font-size: 14px;
   position: absolute;
   top: 15%;
   right: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.tenant-wrapper {
+  position: absolute;
+  top: 0px;
+  right: -15px;
   transform: translate(-50%, -50%);
 }
 

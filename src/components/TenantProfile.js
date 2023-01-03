@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom'
 import LeaseForm from './LeaseForm'
 
 function TenantProfile(props) {
-    const {currentTenant, handleLogout, setCurrentTenant, darkMode} = props
+    const {currentTenant, handleLogout, setCurrentTenant, darkMode, toggleDark} = props
     const history = useHistory()
 
     const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
@@ -57,11 +57,10 @@ useEffect(() => {
             </div>
 
 
-
             <div>
             </div>
         </div>
-        <TenantDetails currentTenant={currentTenant} setCurrentTenant={setCurrentTenant} darkMode={darkMode}/>
+        <TenantDetails currentTenant={currentTenant} setCurrentTenant={setCurrentTenant} darkMode={darkMode} toggleDark={toggleDark}/>
             {/* {renderTenantMaintenanceRequest} */}
             {/* {leaseInfo} */}
         </div>
