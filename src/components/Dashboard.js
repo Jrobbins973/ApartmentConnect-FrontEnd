@@ -17,11 +17,13 @@ function Dashboard(props) {
         setEvents,
         handleLogout,
         recentEvents,
-        setCurrentTenant
+        setCurrentTenant,
+        toggleDark
         } = props
     const history = useHistory()
     const [showMaintenanceModal, setShowMaintenanceModal] = useState(false)
     const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
+
 
 // fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
         useEffect(() => {
@@ -29,6 +31,7 @@ function Dashboard(props) {
             .then(res => res.json())
             .then(setCurrentTenant)
         },[])
+
 
     // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
     const [map, setMap] = useState(/** @type google.maps.Map */ (null))
@@ -44,13 +47,19 @@ function Dashboard(props) {
     }
   // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
 
-console.log(currentTenant.leases.length)
-  const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
+console.log(currentTenant)
+const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
     return (
         
 <div>
         <div className="header">
-            <h1 className='header'>Dashboard</h1>
+            <h1 className='header'>Dashboard
+            
+
+            
+            </h1>
+          
+            
         <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"/>
         <label for="openSidebarMenu" className="sidebarIconToggle">
             <div className="spinner diagonal part-1"></div>
@@ -71,8 +80,33 @@ console.log(currentTenant.leases.length)
             </div>
 </div>
                 <div>
-                    {currentTenant.leases.length > 0 ? null : <button className='alert info' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button>}
-                    <h1 className='alert info'>Announcement: Elevator #4 will be down for maintenance today (12/23/22) </h1>
+                    {/* {currentTenant.leases.length > 0 ? null : <button className='alert info' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button>} */}
+                    <h1 className='alert info'>Announcement: Elevator #4 will be down for maintenance today (12/23/22) 
+                    </h1>
+
+                    <div class="wrapper">
+                <input onClick={() => toggleDark()} type="checkbox" id="hide-checkbox"/>
+                <label for="hide-checkbox" class="toggle">
+                    <span class="toggle-button">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>   
+                    <span class="crater crater-4"></span>
+                    <span class="crater crater-5"></span>
+                    <span class="crater crater-6"></span>
+                    <span class="crater crater-7"></span>
+                    </span>
+                    <span class="star star-1"></span>
+                    <span class="star star-2"></span>
+                    <span class="star star-3"></span>
+                    <span class="star star-4"></span>
+                    <span class="star star-5"></span>
+                    <span class="star star-6"></span>
+                    <span class="star star-7"></span>
+                    <span class="star star-8"></span>
+                </label>
+                </div>
+
                     <div className='upcoming-events-box'>
                         <h1 onClick={() => history.push('/events')}>Upcoming Events</h1>
                         <div>

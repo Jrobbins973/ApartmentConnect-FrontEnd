@@ -17,8 +17,8 @@ function TenantDetails(props) {
             <div className='tenant-rent-info'>
 
             <h2>Rent Information</h2>
-            <h3>{lease.rent}</h3>
-            <h3>Next Payment: {lease.rent_duedate}</h3>
+            <h3>{currentTenant.leases ? currentTenant.leases.map(lease => <p>Payment Amount: {lease.rent} </p>) : 'Payment'}</h3>
+            <h3>{currentTenant.leases ? currentTenant.leases.map(lease => <p>Next Payment: {lease.rent_duedate}</p>) : <p>TEST</p>} </h3>
             </div>
             
             <div className='tenant-contact-info'>

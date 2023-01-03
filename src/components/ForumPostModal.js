@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ForumPostComments from './ForumPostComments'
 
 function ForumPostModal(props) {
-    const {setShowDetailsModal, postDetails, post, setPostDetails} = props
+    const {setShowDetailsModal, postDetails, post, setPostDetails, currentTenant} = props
 
     const [reply, setReply] = useState("")
 
@@ -10,8 +10,11 @@ const comments = postDetails.forum_post_replies ? postDetails.forum_post_replies
     <ForumPostComments 
     key={reply.id}
     reply={reply}
+    setReply={setReply}
     postDetails={postDetails}
     setPostDetails={setPostDetails}
+    post={post}
+    currentTenant={currentTenant}
     />) : null
 
 // console.log(postDetails)

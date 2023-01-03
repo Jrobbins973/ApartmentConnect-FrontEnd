@@ -66,6 +66,7 @@ function handleModal(){
         postDetails={postDetails} 
         post={post}
         setPostDetails={setPostDetails}
+        currentTenant={currentTenant}
         /> 
         : 
         null}
