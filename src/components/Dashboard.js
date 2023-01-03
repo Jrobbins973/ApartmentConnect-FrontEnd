@@ -71,9 +71,9 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
             <ul className="sidebarMenuInner">
                 <li onClick={() => history.push('/my_profile')}>{currentTenant.first_name} {currentTenant.last_name} <span>Renter</span></li>
                 <li onClick={() => history.push('/forum')}><p>FORUM</p></li>
-                <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li>
+                {/* <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li> */}
                 <li onClick={() => history.push('/events')}><p>EVENTS</p></li>
-                <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li>
+                {/* <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li> */}
                 <li onClick={() => history.push('/local_businesses')}><p>MAP</p></li>
                 <li onClick={() => setShowMaintenanceModal(true)}><p>REQUEST MAINTENANCE</p></li>
                 <li onClick={handleLogout}><p>LOGOUT</p></li>

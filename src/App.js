@@ -137,7 +137,8 @@ const toggleDark = () => {
           handleLogout={handleLogout} 
           currentTenant={currentTenant}
           setCurrentTenant={setCurrentTenant}
-          darkMode={darkMode}/>
+          darkMode={darkMode}
+          toggleDark={toggleDark}/>
         </Route>
 
         <Route path = '/events'>
