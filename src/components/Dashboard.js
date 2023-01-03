@@ -18,11 +18,12 @@ function Dashboard(props) {
         handleLogout,
         recentEvents,
         setCurrentTenant,
-        toggleDark
+        toggleDark,
+        darkMode
         } = props
     const history = useHistory()
     const [showMaintenanceModal, setShowMaintenanceModal] = useState(false)
-    const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
+    
 
 
 // fetches current user from localstorage, to keep them logged in even after page refreshes - ONLY ON DASHBOARD.. will fix later
@@ -48,7 +49,7 @@ function Dashboard(props) {
   // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
 
 console.log(currentTenant)
-const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent}/>)
+const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key={recentEvent.id} recentEvent={recentEvent} darkMode={darkMode}/>)
     return (
         
 <div>
@@ -81,7 +82,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
 </div>
                 <div>
                     {/* {currentTenant.leases.length > 0 ? null : <button className='alert info' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button>} */}
-                    <h1 className='alert info'>Announcement: Elevator #4 will be down for maintenance today (12/23/22) 
+                    <h1 className={`${darkMode ?  'alert-dark' : 'alert-light'}`}>Announcement: Elevator #4 will be down for maintenance today 
                     </h1>
 
                     <div class="wrapper">
@@ -107,7 +108,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                 </label>
                 </div>
 
-                    <div className='upcoming-events-box'>
+                    <div className={`${darkMode ?  'upcoming-events-box-dark' : 'upcoming-events-box-light'}`}>
                         <h1 onClick={() => history.push('/events')}>Upcoming Events</h1>
                         <div>
                         {renderRecentEvents}
@@ -115,11 +116,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
                     </div>
 
 
-                    {showLeaseFormModal ? <LeaseForm 
-                    setShowLeaseFormModal = {setShowLeaseFormModal}
-                    currentTenant={currentTenant}
-                    setCurrentTenant={setCurrentTenant}
-                    /> : null}
+                    
 
 
                     <div className='business-shoutout-box'>

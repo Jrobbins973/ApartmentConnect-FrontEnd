@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 import EditForumReplies from './EditForumReplies'
 
 function ForumPostComments(props) {
-    const {reply, postDetails, setPostDetails, post, setReply} = props
+    const {reply, postDetails, setPostDetails, post, setReply, currentTenant} = props
 
 
     const [isEditing, setIsEditing] = useState(false)
 
 
-
+// console.log(reply)
 
 
 const deleteReply = (replyId) => {
@@ -34,7 +34,7 @@ const handleDeleteClick = () => {
         return (
         <div>
 
-        <p> {reply.text}</p> 
+        <p>{reply.text}</p> 
 
             {/* <button onClick={() => setIsEditing(true)} className='reply-edit-button'> {isEditing ? "Editing..." : "Edit"}</button>  */}
             <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button>

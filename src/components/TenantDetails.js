@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import TenantForumPosts from './TenantForumPosts'
 
+
 function TenantDetails(props) {
-    const {lease, currentTenant} = props
+    const {lease, currentTenant, setCurrentTenant} = props
+    
+
 
     const tenantForumPosts = currentTenant.forum_posts ? currentTenant.forum_posts.map(post => <TenantForumPosts key={post.id} post={post}/>) : null
         
@@ -17,8 +20,8 @@ function TenantDetails(props) {
             <div className='tenant-rent-info'>
 
             <h2>Rent Information</h2>
-            <h3>{currentTenant.leases ? currentTenant.leases.map(lease => <p>Payment Amount: {lease.rent} </p>) : 'Payment'}</h3>
-            <h3>{currentTenant.leases ? currentTenant.leases.map(lease => <p>Next Payment: {lease.rent_duedate}</p>) : <p>TEST</p>} </h3>
+            <h3>Payment Amount:</h3>{currentTenant.leases ? currentTenant.leases.map(lease => lease.rent) : 'Payment'}
+            <h3>Next Payment:</h3>{currentTenant.leases ? currentTenant.leases.map(lease => <p>Due: {lease.rent_duedate}</p>) : <p>TEST</p>} 
             </div>
             
             <div className='tenant-contact-info'>
@@ -27,11 +30,13 @@ function TenantDetails(props) {
             <h4>Email: {currentTenant.email_address}</h4>
 
             </div>
-            <h1> My Activity</h1>
+            <h1 className='tenant-activity-box-title'> My Activity</h1>
             <div className='tenant-forum-activity-box'>
             <h2>Recent Posts</h2>
 
             {tenantForumPosts}
+
+            
             </div>
         </div>
         
