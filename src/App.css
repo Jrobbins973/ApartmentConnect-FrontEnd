@@ -699,6 +699,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   left: 5px;
   background-color: rgba(245, 245, 245, 0.660);
   border-radius: 10px;
+  border: 2px solid black
 }
 
 .tenant-rent-info-dark {
@@ -719,6 +720,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background-color: rgba(245, 245, 245, 0.660);
   border-radius: 10px;
   height: 196px;
+  border: 2px solid black
 }
 
 .tenant-contact-info-dark {
@@ -741,7 +743,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   height: 41%;
   top: 320px;
   left: 5px;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
   background-color: rgba(245, 245, 245, 0.660);
 }
