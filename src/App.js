@@ -87,7 +87,7 @@ const toggleDark = () => {
 }
 
   return (
-    <div className= {`${darkMode ?  'App-light' : 'App-dark'}`}>
+    <div className= {`${darkMode ?  'App-dark' : 'App-light'}`}>
 
       <Switch>
 
@@ -113,7 +113,8 @@ const toggleDark = () => {
           toggleLoggedIn={toggleLoggedIn} 
           setIsLoggedIn={setIsLoggedIn}
           setCurrentTenant={setCurrentTenant}
-          toggleDark={toggleDark}/>
+          toggleDark={toggleDark}
+          darkMode={darkMode}/>
         </Route>
 
         <Route path = '/forum'>

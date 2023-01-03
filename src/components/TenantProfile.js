@@ -2,17 +2,14 @@ import React, {useState, useEffect} from 'react'
 import TenantDetails from './TenantDetails'
 import TenantMaintenance from './TenantMaintenance'
 import {useHistory} from 'react-router-dom'
+import LeaseForm from './LeaseForm'
 
 function TenantProfile(props) {
     const {currentTenant, handleLogout, setCurrentTenant} = props
     const history = useHistory()
-    // const [tenant, setTenant] = useState({})
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:3000/tenants/${currentTenant.id}`)
-    //     .then(res => res.json())
-    //     .then(setTenant)
-    // },[])
+    const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
+
 
 // const leaseInfo = currentTenant.leases ? currentTenant.leases.map(lease => <TenantDetails key={lease.id} lease={lease} currentTenant={currentTenant}/>) : console.log("hello")
 
@@ -31,9 +28,13 @@ useEffect(() => {
 
 
             <div className="header">
-            <h1 className='header'>Hello {currentTenant.first_name}</h1>
+            <h1 className='header'>Hello {currentTenant.first_name} <button onClick={() => setShowLeaseFormModal(true)}>+</button></h1>
 
-           
+            {showLeaseFormModal ? <LeaseForm 
+                    setShowLeaseFormModal = {setShowLeaseFormModal}
+                    currentTenant={currentTenant}
+                    setCurrentTenant={setCurrentTenant}
+                    /> : null}
 
         <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"/>
         <label for="openSidebarMenu" className="sidebarIconToggle">
@@ -60,7 +61,7 @@ useEffect(() => {
             <div>
             </div>
         </div>
-        <TenantDetails currentTenant={currentTenant}/>
+        <TenantDetails currentTenant={currentTenant} setCurrentTenant={setCurrentTenant}/>
             {/* {renderTenantMaintenanceRequest} */}
             {/* {leaseInfo} */}
         </div>

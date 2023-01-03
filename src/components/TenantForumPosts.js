@@ -7,7 +7,7 @@ function TenantForumPosts(props) {
     const [showDetailsModal, setShowDetailsModal] = useState(false)
     
     // RENDER POST DETAILS
-       const renderPostDetails = () => {
+        const renderPostDetails = () => {
         fetch(`http://localhost:3000/forum_posts/${post.id}`)
         .then(res => res.json())
         .then(setPostDetails)
@@ -23,8 +23,8 @@ function TenantForumPosts(props) {
     return (
         <div onClick={handleModal} className='tenant-forum-activity'>
             
-            <h4>{post.text}</h4>
-            <p>{post.category}</p>
+            <h4> - {post.text}</h4>
+            
 
             {showDetailsModal ? <ForumPostModal 
         setShowDetailsModal={setShowDetailsModal} 
