@@ -653,7 +653,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   cursor: pointer;
 }
 
-.tenant-details {
+.tenant-details-light {
   z-index: 5;
   position: relative;
   border: 1px solid black;
@@ -663,8 +663,24 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   margin: auto;
   border-radius: 20px;
   box-shadow: 0px 8px 8px black;
-  background-color: white;
-  
+  /* background-color: white; */
+  background-image: url('https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?cs=srgb&dl=pexels-pixabay-53594.jpg&fm=jpg');
+}
+
+.tenant-details-dark {
+  z-index: 5;
+  position: relative;
+  border: 1px solid black;
+  top: 100px;
+  height: 550px;
+  width: 1150px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0px 8px 8px black;
+  /* background-color: white; */
+  background-image: url('https://www.nps.gov/shen/learn/nature/images/20170922_BigMeadows_Night_DSC5591_mo.jpg?maxwidth=1200&maxheight=1200&autorotate=false');
+  background-size: cover;
+  color: white;
 }
 
 .tenant-details img {
@@ -675,47 +691,125 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   right: 470px;
 }
 
-.tenant-rent-info {
+.tenant-rent-info-light {
   /* border-top: 1px solid black; */
   position: relative;
   width: 50%;
   top: 53px;
+  left: 5px;
+  background-color: rgba(245, 245, 245, 0.660);
+  border-radius: 10px;
+  border: 2px solid black
 }
 
-.tenant-contact-info {
-  left: 50%;
+.tenant-rent-info-dark {
+  position: relative;
+  width: 50%;
+  top: 53px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+}
+
+.tenant-contact-info-light {
+  left: 590px;
   /* border-top: 1px solid black; */
   position: absolute;
-  width: 50%;
-  bottom: 370px;
+  width: 48%;
+  top: 53px;
+  background-color: rgba(245, 245, 245, 0.660);
+  border-radius: 10px;
+  height: 196px;
+  border: 2px solid black
 }
 
-.tenant-forum-activity-box{
+.tenant-contact-info-dark {
+  left: 590px;
+  /* border-top: 1px solid black; */
+  position: absolute;
+  width: 48%;
+  top: 53px;
+  background-color: rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  height: 196px;
+}
+
+
+.tenant-forum-activity-box-light{
   position: absolute;
   overflow: auto;
   /* border: 1px solid black; */
-  width: 45%;
-  height: 35%;
-  top: 350px;
-  left: 25px;
+  width: 50%;
+  height: 41%;
+  top: 320px;
+  left: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.660);
 }
 
-.tenant-forum-activity {
+.tenant-forum-activity-box-dark{
+  position: absolute;
+  overflow: auto;
   /* border: 1px solid black; */
+  width: 50%;
+  height: 41%;
+  top: 320px;
+  left: 5px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.tenant-forum-activity-box h2{
+border-bottom: 2px solid white;
+
+}
+
+.tenant-forum-activity-light {
+  border: 1px solid black;
   width: 100%;
   transition: all 0.1s;
+
 }
-.tenant-forum-activity:hover {
+
+.tenant-forum-activity-dark {
+  border: 1px solid white;
+  width: 100%;
+  transition: all 0.1s;
+
+}
+
+
+.tenant-forum-activity-light:hover {
   box-shadow: inset 0px 0px 10px #06b;
   cursor: pointer;
 }
+.tenant-forum-activity-dark:hover {
+  box-shadow: inset 0px 0px 100px rgb(255, 255, 255);
+  cursor: pointer;
+}
 
-.tenant-activity-box-title {
+.tenant-activity-box-title-light {
   position: absolute;
   top: 250px;
-  left: 520px;
-  border-bottom: 1px solid black;
-  
+  left: 490px;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 200px;
+  background-color: rgba(245, 245, 245, 0.660);;
+
+}
+
+.tenant-activity-box-title-dark {
+  position: absolute;
+  top: 250px;
+  left: 490px;
+  border: 2px solid rgb(220, 220, 220);
+  border-radius: 15px;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.66);;
+
 }
 /* 
 .tenant-details h2 {

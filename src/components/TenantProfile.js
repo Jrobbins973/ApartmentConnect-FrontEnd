@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom'
 import LeaseForm from './LeaseForm'
 
 function TenantProfile(props) {
-    const {currentTenant, handleLogout, setCurrentTenant} = props
+    const {currentTenant, handleLogout, setCurrentTenant, darkMode} = props
     const history = useHistory()
 
     const [showLeaseFormModal, setShowLeaseFormModal] = useState(false)
@@ -47,9 +47,9 @@ useEffect(() => {
                 <li onClick={() => history.push('/my_profile')}>{currentTenant.first_name} {currentTenant.last_name} <span>Renter</span></li>
                 <li onClick={() => history.push('/dashboard')}><p>HOME</p></li>
                 <li onClick={() => history.push('/forum')}><p>FORUM</p></li>
-                <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li>
+                {/* <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li> */}
                 <li onClick={() => history.push('/events')}><p>EVENTS</p></li>
-                <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li>
+                {/* <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li> */}
                 <li onClick={() => history.push('/local_businesses')}><p>MAP</p></li>
                 <li onClick={() => history.push('/maintenance')}><p>REQUEST MAINTENANCE</p></li>
                 <li onClick={handleLogout}><p>LOGOUT</p></li>
@@ -61,7 +61,7 @@ useEffect(() => {
             <div>
             </div>
         </div>
-        <TenantDetails currentTenant={currentTenant} setCurrentTenant={setCurrentTenant}/>
+        <TenantDetails currentTenant={currentTenant} setCurrentTenant={setCurrentTenant} darkMode={darkMode}/>
             {/* {renderTenantMaintenanceRequest} */}
             {/* {leaseInfo} */}
         </div>

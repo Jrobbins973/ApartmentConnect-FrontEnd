@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ForumPostModal from './ForumPostModal'
 
 function TenantForumPosts(props) {
-    const {post} = props
+    const {post, darkMode} = props
     const [postDetails, setPostDetails] = useState([])
     const [showDetailsModal, setShowDetailsModal] = useState(false)
     
@@ -21,11 +21,10 @@ function TenantForumPosts(props) {
 
 
     return (
-        <div onClick={handleModal} className='tenant-forum-activity'>
-            
-            <h4> - {post.text}</h4>
-            
-
+        <div onClick={handleModal} className= {`${darkMode ?  'tenant-forum-activity-dark' : 'tenant-forum-activity-light'}`}>
+            <h3>Category - {post.category}</h3>
+            <h4> {post.text}</h4>
+        <div>
             {showDetailsModal ? <ForumPostModal 
         setShowDetailsModal={setShowDetailsModal} 
         postDetails={postDetails} 
@@ -34,6 +33,8 @@ function TenantForumPosts(props) {
         /> 
         : 
         null}
+        </div>
+            
         </div>
     )
     }
