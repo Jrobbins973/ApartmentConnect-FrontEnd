@@ -134,7 +134,7 @@ function handleForumSubmission(e){
                     </select>
                 <label>Category</label>
                 </div>
-                <button>
+                <button className='button-62'>
                 <span></span>
                 <span></span>
                 <span></span>

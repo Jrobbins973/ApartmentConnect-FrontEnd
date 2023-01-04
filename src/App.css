@@ -1442,7 +1442,7 @@ border-bottom: 2px solid white;
   font-size: 12px;
 }
 
-.login-box form button {
+/* .login-box form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -1545,9 +1545,42 @@ border-bottom: 2px solid white;
   50%,100% {
     bottom: 100%;
   }
+} */
+
+
+
+.button-62 {
+  background: black;
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 25px;
+  border: 1px solid #03e9f4;
 }
 
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
 
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
 .category-dropdown{
 position: relative;
 top: 12px;
