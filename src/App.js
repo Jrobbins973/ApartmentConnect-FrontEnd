@@ -149,7 +149,9 @@ const toggleDark = () => {
           currentTenant={currentTenant}
           setEvents={setEvents}
           events={events}
-          toggleDark={toggleDark}/>
+          toggleDark={toggleDark}
+          darkMode = {darkMode}
+          setCurrentTenant={setCurrentTenant}/>
         </Route>
 
         <Route path = '/local_businesses'>

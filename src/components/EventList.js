@@ -1,7 +1,7 @@
 import React from 'react'
 
 function EventList(props) {
-    const {event, handleDeleteEvent, currentTenant} = props
+    const {event, handleDeleteEvent, currentTenant, darkMode} = props
 
 
 const deleteEvent = () => {
@@ -33,7 +33,8 @@ let amenityImage = (event.ammenity === "Pool") ? <img className='event-image' sr
     // console.log(event.ammenity)
     return (<div>
         
-        <div className='forum-post-container'>
+        <div className={`${darkMode ? 'forum-post-container-dark' : 'forum-post-container-light'}`}>
+
 
         <div className='event-post'>
             <h3>{event.title}</h3>
