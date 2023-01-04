@@ -173,7 +173,7 @@
   }
 
   /* FORUM STYLING */
-  .forum-post {
+  .forum-post-dark {
     /* Add a border and some padding to the container */
     border: 1px solid rgb(0, 0, 0);
     padding: 30px;
@@ -187,14 +187,14 @@
     border-radius: 15px;
     transition: all 0.2s;
     overflow: auto;
-    height: 200px;
+    height: 250px;
   }
 
-  .forum-post:hover{
+  .forum-post-dark:hover{
     transform: scale(1.03);
   }
 
-  .forum-post p {
+  .forum-post-dark p {
     font-size: 15px;
     position: relative;
     right: 0px;
@@ -211,6 +211,42 @@
     position: relative;
     top: 0px;
   }
+
+
+  /* FORUM STYLING */
+  .forum-post-light {
+    /* Add a border and some padding to the container */
+    border: 1px solid rgb(0, 0, 0);
+    padding: 30px;
+    color: black;
+    width: 60%;
+    position: relative;
+    left: 37%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    background-color: rgba(255, 247, 247, 0.671);
+    border-radius: 15px;
+    transition: all 0.2s;
+    overflow: auto;
+    height: 250px;
+  }
+
+  .forum-post-light:hover{
+    transform: scale(1.03);
+  }
+
+  .forum-post-light p {
+    font-size: 15px;
+    position: relative;
+    right: 0px;
+    bottom: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 100px;
+    color: black;
+    /* background-color: #2196F3; */
+  }
+
 
     /* Add some style to the header */
   .post-header {
@@ -229,13 +265,7 @@
       color: black;
       box-shadow: 0px 0px 10px #03e9f4; 
     }
-      /* Add an avatar image */
-      .avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
+
     
   
     /* Add some style to the body */
@@ -1387,7 +1417,7 @@ border-bottom: 2px solid white;
 
 /* new forum-posting form! */
 
-.login-box {
+.login-box-dark {
   position: absolute;
   top: 50%;
   left: 18%;
@@ -1401,18 +1431,18 @@ border-bottom: 2px solid white;
   z-index: 3;
 }
 
-.login-box h2 {
+.login-box-dark h2 {
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
 }
 
-.login-box .user-box {
+.login-box-dark .user-box-dark {
   position: relative;
 }
 
-.login-box .user-box input {
+.login-box-dark .user-box-dark input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -1423,7 +1453,7 @@ border-bottom: 2px solid white;
   outline: none;
   background: transparent;
 }
-.login-box .user-box label {
+.login-box-dark .user-box-dark label {
   position: absolute;
   top:0;
   left: 0;
@@ -1434,118 +1464,71 @@ border-bottom: 2px solid white;
   transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box-dark .user-box-dark input:focus ~ label,
+.login-box-dark .user-box-dark input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;
 }
 
-/* .login-box form button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  background-color: black;
-}
 
-.login-box button:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
-}
 
-.login-box button span {
+.login-box-light {
   position: absolute;
-  display: block;
+  top: 50%;
+  left: 18%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 253, 253, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  border: 2px solid black;
+  z-index: 3;
 }
 
-.login-box button span:nth-child(1) {
-  top: 0;
-  left: -100%;
+.login-box-light h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: black;
+  text-align: center;
+}
+
+.login-box-light .user-box-light {
+  position: relative;
+}
+
+.login-box-light .user-box-light input {
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
 }
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box button span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-.login-box button span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-.login-box button span:nth-child(4) {
-  bottom: -100%;
+.login-box-light .user-box-light label {
+  position: absolute;
+  top:0;
   left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  pointer-events: none;
+  transition: .5s;
 }
 
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-} */
+.login-box-light .user-box-light input:focus ~ label,
+.login-box-light .user-box-light input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: black;
+  font-size: 12px;
+}
 
 
 
@@ -1597,6 +1580,7 @@ font-size: 14px;
 .forum-details-modal {
   position: fixed;
   color: white;
+  
   left: 0;
   top: 0;
   right: 0;
@@ -1608,8 +1592,62 @@ font-size: 14px;
   z-index: 20;
 }
 
+.forum-modal-button {
+  background: #15172b;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  border: 1px solid white;
+  /* height: 30px; */
+}
+
+.forum-modal-button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-modal-button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-modal-close-button {
+  background-color: #15172b;
+  bottom: 325px;
+  position: relative;
+  border: 2px solid white;
+  color: white;
+  border-radius: 200px;
+  left: 355px;
+  transition: all 0.2s;
+}
+
+.forum-modal-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.725);
+  color: black;
+  cursor: pointer;
+}
+
+
 .forum-details-modal-content {
   width: 750px;
+  border: 2px solid white;
   height: 600px;
   background-color: #15172b;
   border-radius: 20px;
@@ -2054,3 +2092,170 @@ p.morning {
 }
 
 
+/* .forum-comments-button-dark {
+  background-color: rgba(0, 0, 0, 0.458);
+  color: white;
+  border: 1px solid #03e9f4;
+  position: absolute;
+  border-radius: 5px;
+  top: 150px;
+  left: 350px;
+  font-weight: 200;
+  transition: all 0.1s;
+}
+
+.forum-comments-button-dark:hover {
+  cursor: pointer;
+
+}
+
+.forum-comments-button-light {
+  background-color: rgba(255, 247, 247, 0.458);
+  color: black;
+  border: 1px solid #03e9f4;
+  position: absolute;
+  border-radius: 5px;
+  font-weight: 200;
+  top: 150px;
+  left: 350px;
+} */
+
+.forum-comments-button-dark {
+  background: black;
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 20px;
+  border: 1px solid #03e9f4;
+  /* height: 30px; */
+}
+
+.forum-comments-button-dark:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-comments-button-dark:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+
+
+.forum-comments-button-light {
+  background: white;
+  border: 0;
+  border-radius: 12px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 20px;
+  border: 1px solid #03e9f4;
+  /* height: 30px; */
+}
+
+.forum-comments-button-light:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-comments-button-light:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+
+.forum-delete-button-light {
+  background: white;
+  border: 0;
+  border-radius: 12px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 20px;
+  border: 1px solid #03e9f4;
+  /* height: 30px; */
+}
+
+.forum-delete-button-light:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-delete-button-light:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-delete-button-dark {
+  background: black;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: relative;
+  top: 20px;
+  right: 10px;
+  border: 1px solid #03e9f4;
+  /* height: 30px; */
+}
+
+.forum-delete-button-dark:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.forum-delete-button-dark:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}

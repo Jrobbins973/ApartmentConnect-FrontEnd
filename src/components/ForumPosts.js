@@ -5,7 +5,7 @@ import {AiFillDelete} from 'react-icons/ai'
 const defaultAvatar = 'https://img.freepik.com/free-icon/user_318-804790.jpg?w=2000'
 
 function ForumPosts(props) {
-    const {post, deletePost, currentTenant} = props
+    const {post, deletePost, currentTenant, darkMode} = props
     const [showDetailsModal, setShowDetailsModal] = useState(false)
     const [postDetails, setPostDetails] = useState([])
 
@@ -43,7 +43,7 @@ function handleModal(){
 
     return (
     <div className='forum-post-container'>
-    <div className='forum-post'>
+    <div className={`${darkMode ?  'forum-post-dark' : 'forum-post-light'}`}>
         <div className="post-header">
             {/* <img className="avatar" src={defaultAvatar} alt="User avatar"/> */}
             {post.full_tenant_name} | {post.category}
@@ -54,10 +54,11 @@ function handleModal(){
         {/* <p style={style}>{post.category}</p> */}
         
         {/* ternary for displaying delete button */}
-    {currentTenant.id === post.tenant_id ? <button className='forum-delete-button' onClick={handleDelete}> <AiFillDelete/> </button> : null}
+    
         {/* ternary for displaying delete button */}
         <br></br>
-        <button className='button-16' onClick={handleModal}>Comments</button>
+        {currentTenant.id === post.tenant_id ? <button className={`${darkMode ?  'forum-delete-button-dark' : 'forum-delete-button-light'}`} onClick={handleDelete}> Delete </button> : null}
+        <button className={`${darkMode ?  'forum-comments-button-dark' : 'forum-comments-button-light'}`} onClick={handleModal}>Comments</button>
 </div>
 
         {/* MODAL */}

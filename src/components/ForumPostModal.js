@@ -78,11 +78,11 @@ const addReply = e => {
                         onChange={handleReplyChange}
                         required
                         ></textarea>
-                        <input type="submit" value="Submit"/>
+                        <input className='forum-modal-button' type="submit" value="Submit"/>
                     </form>
                 {/* COMMENT FORM */}
 
-<button onClick={() => setShowDetailsModal(false)}>close</button>
+<button className='forum-modal-close-button' onClick={() => setShowDetailsModal(false)}>X</button>
                 
             </div>
         </div>
