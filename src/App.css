@@ -558,26 +558,48 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 
-.forum-post-container {
+.forum-post-container-light {
   position: relative;
   top: 100px;
   /* height: 200px; */
 }
 
-.forum-post-container p {
+.forum-post-container-light p {
   font-size: 15px;
   position: relative;
   padding-left: 400px;
   top: 150px;
 }
 
-.forum-post-container h3 {
+.forum-post-container-light h3 {
   font-size: 20px;
   font-weight: 200;
   position: relative;
   padding-left: 400px;
   top: 150px;
-  
+}
+
+/* DARK DARK DARK */
+.forum-post-container-dark {
+  position: relative;
+  top: 100px;
+  /* background-color: black; */
+  /* height: 200px; */
+}
+
+.forum-post-container-dark p {
+  font-size: 15px;
+  position: relative;
+  padding-left: 400px;
+  top: 150px;
+}
+
+.forum-post-container-dark h3 {
+  font-size: 20px;
+  font-weight: 200;
+  position: relative;
+  padding-left: 400px;
+  top: 150px;
 }
 
 .forum-submission-form {
@@ -914,6 +936,19 @@ border-bottom: 2px solid white;
 
 
 .event-post { 
+
+  /* border: 1px solid #ccc;
+  padding: 30px;
+  position: relative;
+  width: 200px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  background-color: black; */
+  /* background-image: url("https://edisonlofts.com/images/EdisonLofts%2027.jpg"); */
+  /* background-size: cover; */
+}
+
+.event-post-dark { 
 
   border: 1px solid #ccc;
   padding: 30px;

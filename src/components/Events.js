@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import EventList from './EventList'
 import DatePicker from "react-datepicker";
@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Events(props) {
 
-    const {currentTenant, handleLogout, events, setEvents, toggleDark} = props
+    const {currentTenant, handleLogout, events, setEvents, toggleDark, darkMode, setCurrentTenant} = props
     const history = useHistory()
     
     const [date, setDate] = useState(new Date())
@@ -15,6 +15,12 @@ function Events(props) {
     const [eventDescription, setEventDescription] = useState("")
     const [eventLocation, setEventLocation] = useState("")
 
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/tenants/${localStorage.uid}`)
+        .then(res => res.json())
+        .then(setCurrentTenant)
+    },[])
 
     const handleDeleteEvent = eventId => {
 
@@ -55,7 +61,7 @@ const eventSubmission = (newEvent) => {
     .then(newEventData => setEvents([...events, newEventData]))
 } 
 
-const renderEvents = events.map(event => <EventList key={event.id} event={event} handleDeleteEvent={handleDeleteEvent} currentTenant={currentTenant}/>)
+const renderEvents = events.map(event => <EventList key={event.id} event={event} handleDeleteEvent={handleDeleteEvent} currentTenant={currentTenant} darkMode={darkMode}/>)
 
     return (
         <div >
@@ -92,22 +98,22 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
 
 
 {/* EVENT SUBMISSION FORM ----- */} {/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}
-        <div className=' login-box-light'>
+        <div className={`${darkMode ?  'login-box-dark' : 'login-box-light'}`}>
         <form  onSubmit={handleEventSubmit}>
 
             {/* Event Title */}
-        <div className='user-box-light'>
-                    <input 
-                    type="text" 
-                    name="" 
-                    value={eventTitle}
-                    onChange = { e => setEventTitle(e.target.value)}
-                    />
-                <label>Event Title</label>
-                </div>
+        <div className={`${darkMode ? 'user-box-dark' : 'user-box-light'}`}>
+                <input 
+                type="text" 
+                name="" 
+                value={eventTitle}
+                onChange = { e => setEventTitle(e.target.value)}
+                />
+            <label>Event Title</label>
+        </div>
          
          {/* Date & time */}
-                <div className='user-box-light'>
+                <div className={`${darkMode ? 'user-box-dark' : 'user-box-light'}`}>
                 <DatePicker 
             showTimeSelect
             dateFormat="MMMM d, yyyy h:mmaa"
@@ -123,15 +129,27 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
             selected={date} 
             onChange={date => setDate(date)}/> */}
 
+        <div className={`${darkMode ? 'user-box-dark' : 'user-box-light'}`}>
+                <input 
+                type="text" 
+                name="" 
+                value = {eventDescription}
+                onChange = {e => setEventDescription(e.target.value)}
+                />
             <label>Event Description</label>
+        </div>
+        
+
+            {/* <label>Event Description</label>
             <input 
             type="string"
             name="description"
             value = {eventDescription}
-            onChange = {e => setEventDescription(e.target.value)}/>
-
-            <label for="my-dropdown">Location:</label>
-                    <select id="my-dropdown" name="my-dropdown" onChange={e => setEventLocation(e.target.value)}>
+            onChange = {e => setEventDescription(e.target.value)}/> */}
+       
+        <div className={`${darkMode ? 'user-box-dark' : 'user-box-light'}`}>
+            <label className='category-dropdown-text' for="my-dropdown">Location:</label>
+                    <select className='category-dropdown' id="my-dropdown" name="my-dropdown" onChange={e => setEventLocation(e.target.value)}>
                         <option value="Select">Select Option</option>
                         <option value="Pool">Pool</option>
                         <option value="Movie Room">Movie Room</option>
@@ -140,7 +158,15 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
                     </select>
                     <br></br>
                     <br></br>
-                    <input type="submit" value="Submit"/>
+                    {/* <input type="submit" value="Submit"/> */}
+        </div>
+        <button className='button-62'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Schedule
+                </button>
         </form>
         </div>
         
