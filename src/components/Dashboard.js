@@ -119,7 +119,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
 
 
                     
-
+                    {/* className={`${darkMode ?  '-dark' : '-light'}`} */}
 
                     <div className={`${darkMode ?  'business-shoutout-box-dark' : 'business-shoutout-box-light'}`}>
                         <h1 onClick={() => history.push('/local_businesses')}>Business Spotlight</h1>

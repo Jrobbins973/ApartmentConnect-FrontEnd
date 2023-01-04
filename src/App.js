@@ -119,11 +119,13 @@ const toggleDark = () => {
 
         <Route path = '/forum'>
           <Forum 
-
+          setCurrentTenant={setCurrentTenant}
           handleLogout={handleLogout} 
           currentTenant={currentTenant} 
           forumPosts={forumPosts} 
-          setForumPosts={setForumPosts}/>
+          setForumPosts={setForumPosts}
+          toggleDark={toggleDark}
+          darkMode={darkMode}/>
         </Route>
 
         <Route path = '/apartment_news'>
