@@ -148,7 +148,8 @@ const toggleDark = () => {
           handleLogout={handleLogout} 
           currentTenant={currentTenant}
           setEvents={setEvents}
-          events={events}/>
+          events={events}
+          toggleDark={toggleDark}/>
         </Route>
 
         <Route path = '/local_businesses'>

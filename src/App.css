@@ -561,6 +561,23 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .forum-post-container {
   position: relative;
   top: 100px;
+  /* height: 200px; */
+}
+
+.forum-post-container p {
+  font-size: 15px;
+  position: relative;
+  padding-left: 400px;
+  top: 150px;
+}
+
+.forum-post-container h3 {
+  font-size: 20px;
+  font-weight: 200;
+  position: relative;
+  padding-left: 400px;
+  top: 150px;
+  
 }
 
 .forum-submission-form {
@@ -896,20 +913,70 @@ border-bottom: 2px solid white;
 }
 
 
-/* .event-post { */
-  /* Add a border and some padding to the container
+.event-post { 
+
   border: 1px solid #ccc;
   padding: 30px;
-  width: 60%;
   position: relative;
-  left: 37%;
+  width: 200px;
   margin-bottom: 10px;
   margin-top: 5px;
   background-color: white;
-  background-image: url("https://edisonlofts.com/images/EdisonLofts%2027.jpg");
-  background-size: cover;
-} */
+  /* background-image: url("https://edisonlofts.com/images/EdisonLofts%2027.jpg"); */
+  /* background-size: cover; */
+}
 
+.event-image {
+  width: 400px;
+  height: 322px;
+  position: relative;
+  right: 280px;
+  bottom: 75px;
+  border-radius: 10px;
+  opacity: 1;
+  margin-right: -200px;
+}
+
+.event-delete-button {
+  position: absolute;
+  top: 500px;
+  right: 50px;
+}
+
+.event-delete-button {
+  background: black;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: absolute;
+  top: 480px;
+  right: 30px;
+  border: 1px solid #03e9f4;
+  /* height: 30px; */
+}
+
+.event-delete-button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
+
+.event-delete-button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
+}
 
 .upcoming-events-box-light {
   position: absolute;
@@ -1168,7 +1235,7 @@ border-bottom: 2px solid white;
 }
 
 .modal-header, .modal-footer {
-  padding: 10px;
+  padding: 5px;
 }
 
 .modal-title {
@@ -1195,39 +1262,8 @@ border-bottom: 2px solid white;
   top: 10%;
   /* box-shadow: 0 0 10px #000, 0px 0px 12px #ccc; */
   transition: all 0.2s;
+  box-shadow: 0px 0px 10px white;
 }
-
-.form-flipped {
-  background-color: #15172b;
-  position: relative;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 500px;
-  padding: 20px;
-  width: 320px;
-  margin: auto;
-  top: 10%;
-  box-shadow: 0 0 10px #000, 0px 0px 12px #ccc;
-  transition: all 0.2s;
-}
-
-/* .form-back{
-  background-color: #15172b;
-  position: relative;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 500px;
-  padding: 20px;
-  width: 320px;
-  margin: auto;
-  top: 10%;
-  box-shadow: 0 0 10px #000, 0px 0px 12px #ccc;
-  transition: all 0.2s;
-} */
-
-/* .form:hover {
-  transform: scale(0.9);
-} */
 
 .title {
   color: #eee;
@@ -1363,7 +1399,7 @@ border-bottom: 2px solid white;
   padding-top: 15px;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow .5s,-webkit-box-shadow .5s;
+  transition: all 0.2s;
   white-space: nowrap;
   border: 0;
   user-select: none;
@@ -1374,6 +1410,7 @@ border-bottom: 2px solid white;
 
 .login-page-button:hover {
   box-shadow: #00ff08 0 0 0 3px, transparent 0 0 0 0;
+  background-color: #00ff08;
 }
 
 .create-account-button {
@@ -1399,7 +1436,7 @@ border-bottom: 2px solid white;
   padding-top: 15px;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow .5s,-webkit-box-shadow .5s;
+  transition: all 0.2s;
   white-space: nowrap;
   border: 0;
   user-select: none;
@@ -1409,7 +1446,8 @@ border-bottom: 2px solid white;
 }
 
 .create-account-button:hover {
-  box-shadow: #939393 0 0 0 3px, transparent 0 0 0 0;
+  box-shadow: #3c84ef 0 0 0 3px, transparent 0 0 0 0;
+  background-color: #3c84ef;
 }
 
 
@@ -1782,14 +1820,14 @@ font-size: 14px;
 .wrapper {
   position: absolute;
   top: 15%;
-  right: 5%;
+  right: 6%;
   transform: translate(-50%, -50%);
 }
 
 .tenant-wrapper {
   position: absolute;
   top: 0px;
-  right: -15px;
+  right: -10px;
   transform: translate(-50%, -50%);
 }
 
@@ -2259,3 +2297,4 @@ p.morning {
 .forum-delete-button-dark:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 155, 239, 0.5), .125rem .125rem 1rem rgba(71, 155, 239, 0.5);
 }
+
