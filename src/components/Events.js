@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Events(props) {
 
-    const {currentTenant, handleLogout, events, setEvents} = props
+    const {currentTenant, handleLogout, events, setEvents, toggleDark} = props
     const history = useHistory()
     
     const [date, setDate] = useState(new Date())
@@ -55,10 +55,11 @@ const eventSubmission = (newEvent) => {
     .then(newEventData => setEvents([...events, newEventData]))
 } 
 
-const renderEvents = events.map(event => <EventList key={event.id} event={event} handleDeleteEvent={handleDeleteEvent}/>)
+const renderEvents = events.map(event => <EventList key={event.id} event={event} handleDeleteEvent={handleDeleteEvent} currentTenant={currentTenant}/>)
 
     return (
         <div >
+              
         <div>
             {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */} {/* HEADER AND SIDE MENU ------ */}
         <div className="header">
@@ -91,14 +92,26 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
 
 
 {/* EVENT SUBMISSION FORM ----- */} {/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}
-        <div className='forum-submission-form-box'>
-        <form className='forum-submission-form' onSubmit={handleEventSubmit}>
+        <div className=' login-box-light'>
+        <form  onSubmit={handleEventSubmit}>
+        <div className='user-box-light'>
+                    <input 
+                    type="text" 
+                    name="" 
+                    value={eventTitle}
+                    onChange = { e => setEventTitle(e.target.value)}
+                    />
+                <label>Post Content</label>
+                </div>
+            {/* <div className='user-box-light'>
+
             <label>Event Title</label>
             <input 
-            type="string"
-            name="title"
+            type="text"
+            name=""
             value={eventTitle}
             onChange={ e => setEventTitle(e.target.value)}/>
+            </div> */}
 
             <label>Event Date</label>
             <DatePicker 
@@ -128,7 +141,30 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
         </form>
         </div>
         
-
+  {/* DARK MODE TOGGLE BUTTON */}
+  <div class="wrapper">
+                <input onClick={() => toggleDark()} type="checkbox" id="hide-checkbox"/>
+                <label for="hide-checkbox" class="toggle">
+                    <span class="toggle-button">
+                    <span class="crater crater-1"></span>
+                    <span class="crater crater-2"></span>
+                    <span class="crater crater-3"></span>   
+                    <span class="crater crater-4"></span>
+                    <span class="crater crater-5"></span>
+                    <span class="crater crater-6"></span>
+                    <span class="crater crater-7"></span>
+                    </span>
+                    <span class="star star-1"></span>
+                    <span class="star star-2"></span>
+                    <span class="star star-3"></span>
+                    <span class="star star-4"></span>
+                    <span class="star star-5"></span>
+                    <span class="star star-6"></span>
+                    <span class="star star-7"></span>
+                    <span class="star star-8"></span>
+                </label>
+                </div>
+                {/* DARK MODE TOGGLE BUTTON */}
 
         </div>
         </div>
