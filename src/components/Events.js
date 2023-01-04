@@ -94,6 +94,8 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
 {/* EVENT SUBMISSION FORM ----- */} {/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}{/* EVENT SUBMISSION FORM ----- */}
         <div className=' login-box-light'>
         <form  onSubmit={handleEventSubmit}>
+
+            {/* Event Title */}
         <div className='user-box-light'>
                     <input 
                     type="text" 
@@ -101,24 +103,25 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
                     value={eventTitle}
                     onChange = { e => setEventTitle(e.target.value)}
                     />
-                <label>Post Content</label>
+                <label>Event Title</label>
                 </div>
-            {/* <div className='user-box-light'>
-
-            <label>Event Title</label>
-            <input 
-            type="text"
-            name=""
-            value={eventTitle}
-            onChange={ e => setEventTitle(e.target.value)}/>
-            </div> */}
-
-            <label>Event Date</label>
-            <DatePicker 
+         
+         {/* Date & time */}
+                <div className='user-box-light'>
+                <DatePicker 
             showTimeSelect
             dateFormat="MMMM d, yyyy h:mmaa"
             selected={date} 
             onChange={date => setDate(date)}/>
+                {/* <label>Event Title</label> */}
+                </div>
+
+            {/* <label>Event Date</label>
+            <DatePicker 
+            showTimeSelect
+            dateFormat="MMMM d, yyyy h:mmaa"
+            selected={date} 
+            onChange={date => setDate(date)}/> */}
 
             <label>Event Description</label>
             <input 
