@@ -57,11 +57,11 @@ function clearRoute(e) {
 }
 
 
-const center = {lat: 40.7828, lng: -74.2374}
+const center = {lat: 40.7828, lng: -74.2350}
 
     return (
         <div>
-            <button onClick={() => history.push('/dashboard')}> <BsFillArrowRightCircleFill /> </button>
+            <button className='button-61' onClick={() => history.push('/dashboard')}> Home </button>
             
 
             <form className='map-form' >

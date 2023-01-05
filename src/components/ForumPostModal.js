@@ -28,7 +28,7 @@ const addReply = e => {
     e.preventDefault()
     const newReply = {
         forum_post_id: postDetails.id,
-        tenant_id: post.tenant_id,
+        tenant_id: currentTenant.id,
         text: reply
     }
     fetch("http://localhost:3000/forum_post_replies", {

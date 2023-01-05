@@ -8,7 +8,7 @@ function ForumPostComments(props) {
     const [isEditing, setIsEditing] = useState(false)
 
 
-// console.log(reply)
+console.log(reply)
 
 
 const deleteReply = (replyId) => {
@@ -37,7 +37,7 @@ const handleDeleteClick = () => {
         <p>{reply.text}</p> 
 
             {/* <button onClick={() => setIsEditing(true)} className='reply-edit-button'> {isEditing ? "Editing..." : "Edit"}</button>  */}
-            <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button>
+            {reply.tenant_id === currentTenant.id ? <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button> : null}
                 
         </div>
         )

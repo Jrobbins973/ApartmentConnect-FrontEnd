@@ -36,7 +36,7 @@ function Dashboard(props) {
 
     // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
     const [map, setMap] = useState(/** @type google.maps.Map */ (null))
-    const center = {lat: 40.7832, lng: -74.2255}
+    const center = {lat: 40.72465, lng: -74.30672}
 
     const {isLoaded} = useJsApiLoader({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -123,8 +123,8 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
 
                     <div className={`${darkMode ?  'business-shoutout-box-dark' : 'business-shoutout-box-light'}`}>
                         <h1 onClick={() => history.push('/local_businesses')}>Business Spotlight</h1>
-                        <h5>Star Tavern - Voted Best Pizza in NJ!</h5>
-                        <p>400 High St, City of Orange, NJ 07050</p>
+                        <h5>Liv Bakery - Artisan Bakery and Coffee Bar</h5>
+                        <p>184 Essex St, Millburn, NJ 07041</p>
                         <div className='dashboard-google-maps'>
                         <GoogleMap center={center} 
                         zoom={15} 

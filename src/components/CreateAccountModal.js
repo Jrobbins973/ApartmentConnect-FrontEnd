@@ -55,7 +55,7 @@ const handleCreateAccount = e => {
     .then( res => {
         if(res.ok){
             res.json().then(newTenant => console.log(newTenant))
-            alert("Account Created Successfully, Don't forget to add your lease information!")
+            alert("Account Created Successfully, Don't forget to add your lease information! This can be done by clicking the 'add lease information' button found on your account page.")
             setShowModal(false)
         } else {
             res.json().then(json => alert(json.errors))
