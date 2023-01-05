@@ -81,9 +81,9 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
                 <li onClick={() => history.push('/my_profile')}>{currentTenant.first_name} {currentTenant.last_name} <span>Renter</span></li>
                 <li onClick={() => history.push('/dashboard')}><p>HOME</p></li>
                 <li onClick={() => history.push('/forum')}><p>FORUM</p></li>
-                <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li>
+                {/* <li onClick={() => history.push('/apartment_news')}><p>NEWS</p></li> */}
                 <li onClick={() => history.push('/events')}><p>EVENTS</p></li>
-                <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li>
+                {/* <li onClick={() => history.push('/surveys')}><p>SURVEYS</p></li> */}
                 <li onClick={() => history.push('/local_businesses')}><p>MAP</p></li>
                 <li onClick={() => history.push('/maintenance')}><p>REQUEST MAINTENANCE</p></li>
                 <li onClick={handleLogout}><p>LOGOUT</p></li>
@@ -92,7 +92,7 @@ const renderEvents = events.map(event => <EventList key={event.id} event={event}
 
         </div>
         
-        <div className='forum-post-box'>
+        <div className='event-post-box'>
         {renderEvents}
         </div>
 

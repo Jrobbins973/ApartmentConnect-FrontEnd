@@ -28,7 +28,7 @@ useEffect(() => {
 
 
             <div className="header">
-            <h1 className='header'>Hello {currentTenant.first_name} <button onClick={() => setShowLeaseFormModal(true)}>+</button></h1>
+            <h1 className='header'>Hello {currentTenant.first_name} <button className='add-lease-info-button' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button></h1>
 
             {showLeaseFormModal ? <LeaseForm 
                     setShowLeaseFormModal = {setShowLeaseFormModal}
