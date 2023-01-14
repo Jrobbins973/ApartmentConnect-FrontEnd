@@ -24,6 +24,7 @@ function Events(props) {
 
     const handleDeleteEvent = eventId => {
 
+
         const updatedEventList = events.filter(originalEventList => originalEventList.id !== eventId)
         setEvents(updatedEventList)
         // const updatedForumPostList = forumPosts.filter(originalForumPostList => originalForumPostList.id !== postId)

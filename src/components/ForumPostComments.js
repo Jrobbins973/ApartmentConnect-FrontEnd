@@ -37,7 +37,7 @@ const handleDeleteClick = () => {
         <p>{reply.text}</p> 
 
             {/* <button onClick={() => setIsEditing(true)} className='reply-edit-button'> {isEditing ? "Editing..." : "Edit"}</button>  */}
-            {reply.tenant_id === currentTenant.id ? <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button> : null}
+            {/* {reply.tenant_id === currentTenant.id ? <button className='reply-delete-button' onClick={handleDeleteClick}>Delete</button> : null} */}
                 
         </div>
         )

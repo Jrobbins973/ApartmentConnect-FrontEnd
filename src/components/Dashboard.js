@@ -33,7 +33,7 @@ function Dashboard(props) {
             .then(setCurrentTenant)
         },[])
 
-
+    
     // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __  // MAP STUFF __
     const [map, setMap] = useState(/** @type google.maps.Map */ (null))
     const center = {lat: 40.72465, lng: -74.30672}
@@ -82,7 +82,7 @@ const renderRecentEvents = recentEvents.map(recentEvent => <DashboardEvents key=
 </div>
                 <div>
                     {/* {currentTenant.leases.length > 0 ? null : <button className='alert info' onClick={() => setShowLeaseFormModal(true)}>Add Lease Information</button>} */}
-                    <h1 className={`${darkMode ?  'alert-dark' : 'alert-light'}`}>Announcement: Elevator #4 will be down for maintenance today 
+                    <h1 className={`${darkMode ?  'alert-dark' : 'alert-light'}`}>Announcement: Elevator #4 will be down for maintenance today (1/5/2023)
                     </h1>
 
                     {/* DARK MODE TOGGLE BUTTON */}

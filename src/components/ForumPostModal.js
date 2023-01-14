@@ -17,7 +17,7 @@ const comments = postDetails.forum_post_replies ? postDetails.forum_post_replies
     currentTenant={currentTenant}
     />) : null
 
-// console.log(postDetails)
+console.log(postDetails)
 
 const handleReplyChange = e => {
     setReply(e.target.value)
@@ -28,7 +28,7 @@ const addReply = e => {
     e.preventDefault()
     const newReply = {
         forum_post_id: postDetails.id,
-        tenant_id: currentTenant.id,
+        tenant_id: post.tenant_id,
         text: reply
     }
     fetch("http://localhost:3000/forum_post_replies", {
